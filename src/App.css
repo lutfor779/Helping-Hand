@@ -1,7 +1,15 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Roboto Slab', serif !important;
 }
-
+h1,h2,h3,h4,h5,h6 {
+  color: #151566;
+}
+.theme-color {
+  color: #EE5D32;
+}
+.theme-bg{
+  background-color: #EE5D32 !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
