@@ -6,22 +6,25 @@ const Navigation = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Helping Hand</Navbar.Brand>
+                <LinkContainer to="/">
+                    <Navbar.Brand >Helping Hand</Navbar.Brand>
+                </LinkContainer>
+
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="me-auto">
-                        {/* <LinkContainer > */}
-                        <Nav.Link>Get Started</Nav.Link>
-                        {/* </LinkContainer> */}
+                        <LinkContainer to="/getStarted" >
+                            <Nav.Link>Get Started</Nav.Link>
+                        </LinkContainer>
 
-                        {/* <LinkContainer > */}
-                        <Nav.Link>Donation</Nav.Link>
-                        {/* </LinkContainer> */}
+                        <LinkContainer to="/donation" >
+                            <Nav.Link>Donation</Nav.Link>
+                        </LinkContainer>
 
-                        {/* <LinkContainer > */}
-                        <Nav.Link>Services</Nav.Link>
-                        {/* </LinkContainer> */}
+                        <LinkContainer to="/services">
+                            <Nav.Link>Services</Nav.Link>
+                        </LinkContainer>
                     </Nav>
 
                     <Nav>
