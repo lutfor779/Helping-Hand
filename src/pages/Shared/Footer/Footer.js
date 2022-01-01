@@ -47,7 +47,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                    <p className="mt-5 mb-0">Copyright ©helping-hand-2021</p>
+                    <p className="mt-5 mb-0 text-center">Copyright ©helping-hand-2021</p>
                 </div>
             </div>
         </div>

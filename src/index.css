@@ -1,4 +1,8 @@
+/* Use for headline */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&family=Roboto+Slab:wght@300;400;600;800&display=swap');
+
+/* Use for paragraph */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&family=Open+Sans:wght@300;400&family=Roboto+Slab:wght@300;400;600;800&display=swap');
 
 body {
   margin: 0;
