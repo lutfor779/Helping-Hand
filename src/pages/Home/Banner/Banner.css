@@ -1,0 +1,23 @@
+.img-banner{
+    background-image: url(../../../images/banner.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    padding: 100px 0;
+    
+}
+
+.text-color {
+    color: #f15b43;
+}
+
+.text-size{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.button-color{
+    background-color: #f15b43;
+}
