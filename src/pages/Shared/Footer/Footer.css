@@ -1,0 +1,23 @@
+.footer{
+    color: #fff;
+    background-color: #313041;
+}
+.footer a{
+    color: #fff;
+}
+.bg-footer{
+    background-color: #2f4158;
+}
+.list-style li{
+    list-style-type: none;
+}
+
+.button-color{
+    background-color: #f15b43;
+}
+
+
+h4{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+}
