@@ -6,7 +6,7 @@ import AboutUs from '../AboutUs/AboutUs';
 import Activity from '../Activity/Activity';
 import ChooseUs from '../ChooseUs/ChooseUs';
 
-const Home = () => {
+const ServiceHome = () => {
     return (
         <div>
             <Header />
@@ -32,5 +32,5 @@ const Home = () => {
         </div>
     );
 };
+export default ServiceHome;
 
-export default Home;

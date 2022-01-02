@@ -15,7 +15,7 @@ const Home = () => {
   });
   return (
     <div>
-      {isPreLoader == true ? (
+      {isPreLoader === true ? (
         <Loaders></Loaders>
       ) : (
         <div>
@@ -28,6 +28,6 @@ const Home = () => {
       )}
     </div>
   );
-};
+      };
 
 export default Home;
