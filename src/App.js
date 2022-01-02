@@ -16,16 +16,12 @@ import EventDetail from './pages/Events/EventDetail/EventDetail';
 import AdminHome from './pages/AdminPanel/AdminHome/AdminHome';
 import MakeAdmin from './pages/AdminPanel/MakeAdmin/MakeAdmin';
 import AddEvent from './pages/AdminPanel/AddEvent/AddEvent';
-
-
 import Contact from './pages/Contact/Contact';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-
-
       <AuthProvider>
         <BrowserRouter>
           <Routes>
