@@ -1,0 +1,20 @@
+.custom-shadow{
+    box-shadow: 4px 4px 16px 4px rgba(159, 160, 161, 0.178);
+}
+
+.bg-food{
+    background-color: #caf7f2;
+}
+
+.bg-water{
+    background-color: #fde4dd;
+}
+
+.bg-medical{
+    background-color: #d2ecf4;
+}
+
+.bg-blood{
+    background-color: #f88460b7;
+}
+
