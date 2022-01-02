@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-
 import { Breadcrumb } from 'react-bootstrap';
 import { BsEnvelopeOpenFill, BsFillTelephoneFill, BsGlobe } from 'react-icons/bs';
 import { IoLocationSharp } from 'react-icons/io5';
@@ -35,12 +34,6 @@ const Contact = () => {
                     <div className="row text-center py-5">
                         <div className="col text-center">
                             <h2 className="text-white">Contact</h2>
-                            <Breadcrumb>
-                                <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-                                <Breadcrumb.Item href="" active>
-                                Contact
-                                </Breadcrumb.Item>
-                            </Breadcrumb>
                         </div>
                     </div>
                 </div>
@@ -105,7 +98,7 @@ const Contact = () => {
                                     </div>
                                     </div>
                                     <input type="text" name="subject" className="form-control mb-3 p-3 " placeholder="Subject" />
-                                    <textarea className="form-control mb-3 p-3 " name="message" id="" cols="30" rows="10">Message</textarea>
+                                    <textarea className="form-control mb-3 p-3 " name="message" id="" cols="30" rows="10" placeholder='Message'></textarea>
                                     <button type="submit" className="btn theme-bg text-white p-3 px-4">Send Message</button>
                                 </form>
                             </div>

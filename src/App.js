@@ -42,7 +42,7 @@ function App() {
 
             <Route path="/contact" element={<Contact></Contact>} />
             <Route path="donation" element={<Donation />} />
-            <Route path="services" element={
+            <Route path="about" element={
               <PrivateRoute><ServiceHome /></PrivateRoute>
             } />
             <Route path="*" element={<h1>Not found</h1>} />

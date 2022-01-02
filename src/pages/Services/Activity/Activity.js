@@ -7,7 +7,7 @@ import img4 from "../../../images/garbage.jpg"
 
 const Activity = () => {
   return (
-    <div className="latest-news py-5" style={{ backgroundColor: "#FEF6F3" }}>
+    <div className="latest-news py-5 text-center">
       <Container>
         <Row className="justify-content-center">
           <Col xs={6}>
@@ -25,10 +25,9 @@ const Activity = () => {
               <img
                 src={img1}
                 className="img-fluid"
-                style={{ height: "276px" }}
                 alt=""
               />
-              <h6>A group people clean up at the trash exit to the forest to the spring</h6>
+              <p className="mt-3">A group people clean up at the trash exit to the forest to the spring</p>
             </div>
           </Col>
           <Col>
@@ -36,10 +35,9 @@ const Activity = () => {
               <img
                 src={img2}
                 className="img-fluid"
-                style={{ height: "276px" }}
                 alt=""
               />
-              <h6>A group of volunteers forming huddies in park</h6>
+              <p className="mt-3">A group of volunteers forming huddies in park</p>
             </div>
           </Col>
           <Col>
@@ -47,10 +45,9 @@ const Activity = () => {
               <img
                 src={img3}
                 className="img-fluid"
-                style={{ height: "276px" }}
                 alt=""
               />
-              <h6>A group volunteers planting tree in the park</h6>
+              <p className="mt-3">A group volunteers planting tree in the park</p>
             </div>
           </Col>
           <Col>
@@ -58,10 +55,9 @@ const Activity = () => {
               <img
                 src={img4}
                 className="img-fluid"
-                style={{ height: "276px" }}
                 alt=""
               />
-              <h6>A  volunteers peeking garbage in the beach</h6>
+              <p className="mt-3">A  volunteers peeking garbage in the beach</p>
             </div>
           </Col>
         </Row>

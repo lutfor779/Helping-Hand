@@ -14,26 +14,11 @@ const ServiceHome = () => {
         <div>
             <Header />
             <ServiceBanner />
-            <Services />
-            <HelpPeople />
-            <div className="section-header mb-5">
-                <div className="container">
-                    <div className="row text-center py-5">
-                        <div className="col text-center">
-                            <h2 className="text-white">Services</h2>
-                            <Breadcrumb>
-                                <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-                                <Breadcrumb.Item href="" active>
-                                Services
-                                </Breadcrumb.Item>
-                            </Breadcrumb>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Activity />
-            <ChooseUs />
             <AboutUs />
+            <Services />
+            <ChooseUs />
+            <Activity />
+            <HelpPeople />
             <Footer />
         </div>
     );
