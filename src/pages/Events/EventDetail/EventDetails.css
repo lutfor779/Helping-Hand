@@ -1,0 +1,5 @@
+.review input,
+.review textarea,
+.review button {
+  width: 300px;
+}

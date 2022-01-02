@@ -6,7 +6,7 @@
   margin: 2px;
 }
 .donation-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.445)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/175000/175558/image/5e7c50b26920e.jpeg");
   background-repeat: no-repeat;
   width: 100%;
@@ -22,7 +22,7 @@
   height: 400px;
   width: 320px;
   box-shadow: 0px 0px 8px -4px;
-  transform: translate(300px, 220px);
+  transform: translate(40%, 55%);
 }
 .donation-period button {
   width: 130px;
