@@ -1,13 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  BrowserRouter,
-  Routes,
-  Route
+  BrowserRouter, Routes, Route
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
-import Donation from './pages/Donation/Donation';
 import ServiceHome from './pages/Services/ServiceHome/ServiceHome';
+import Donation from './pages/Donation/Donation';
 import AuthProvider from './context/AuthProvider';
 import Login from './pages/Login/Login/Login';
 import Resister from './pages/Login/Resister/Resister';

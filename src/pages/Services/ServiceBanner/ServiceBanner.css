@@ -1,0 +1,17 @@
+.service-banner{
+    background-image: url(../../../images/service-banner.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;   
+}
+
+.text-color {
+    color: #f15b43;
+}
+
+.text-size{
+    font-size: 50px;
+    font-weight: 600;
+}

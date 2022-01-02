@@ -1,0 +1,10 @@
+.donate-banner{
+    background-image: url(../../../images/donate-banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.donate-button{
+    background-color: #63c6bb;
+}
