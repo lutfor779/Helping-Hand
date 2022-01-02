@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './EventDetails.css';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
+
 const EventDetail = () => {
     const { id } = useParams();
     const { user } = useAuth();
@@ -50,8 +53,9 @@ const EventDetail = () => {
     // console.log(event);
 
     return (
-        <div >
-            <div className='row m-0'>
+        <>
+            <Header />
+            <div className='row'>
                 <div className="col-md-6">
                     <img style={{ width: '90%', height: '50vh' }} src={event?.image} alt="" />
                 </div>
@@ -74,8 +78,13 @@ const EventDetail = () => {
                     <textarea required onBlur={e => setMessage(e.target.value)} placeholder='Your Message' type="text" /> <br />
                     <button type="submit"> Submit</button>
                 </form>
+
             </div>
-        </div>
+
+
+
+            <Footer />
+        </>
     );
 };
 

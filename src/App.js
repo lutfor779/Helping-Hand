@@ -1,13 +1,11 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  BrowserRouter,
-  Routes,
-  Route
+  BrowserRouter, Routes, Route
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
-import Donation from './pages/Donation/Donation';
 import ServiceHome from './pages/Services/ServiceHome/ServiceHome';
+import Donation from './pages/Donation/Donation';
 import AuthProvider from './context/AuthProvider';
 import Login from './pages/Login/Login/Login';
 import Resister from './pages/Login/Resister/Resister';
@@ -16,16 +14,12 @@ import EventDetail from './pages/Events/EventDetail/EventDetail';
 import AdminHome from './pages/AdminPanel/AdminHome/AdminHome';
 import MakeAdmin from './pages/AdminPanel/MakeAdmin/MakeAdmin';
 import AddEvent from './pages/AdminPanel/AddEvent/AddEvent';
-
-
 import Contact from './pages/Contact/Contact';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-
-
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -48,7 +42,7 @@ function App() {
 
             <Route path="/contact" element={<Contact></Contact>} />
             <Route path="donation" element={<Donation />} />
-            <Route path="services" element={
+            <Route path="about" element={
               <PrivateRoute><ServiceHome /></PrivateRoute>
             } />
             <Route path="*" element={<h1>Not found</h1>} />
