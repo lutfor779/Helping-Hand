@@ -1,8 +1,12 @@
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+    const { user, admin, logOut } = useAuth();
+
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -31,12 +35,28 @@ const Navigation = () => {
                     </Nav>
 
                     <Nav>
-                        <Navbar.Text>
-                            User Name &nbsp;
-                        </Navbar.Text>
-                        <Button variant="outline-light" >
-                            Login
-                        </Button>
+                        {
+                            admin && <LinkContainer to="/adminPanel">
+                                <Nav.Link>Admin Panel</Nav.Link>
+                            </LinkContainer>
+                        }
+
+                        {
+                            user.displayName && <Navbar.Text>
+                                {user.displayName} &nbsp;
+                            </Navbar.Text>
+                        }
+
+                        {
+                            user.email ?
+                                <Button
+                                    variant='danger'
+                                    onClick={logOut}>Logout</Button>
+                                :
+                                <LinkContainer to="/login">
+                                    <Nav.Link>Login</Nav.Link>
+                                </LinkContainer>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
