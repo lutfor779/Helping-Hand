@@ -4,7 +4,6 @@ import HelpPeople from '../HelpPeople/HelpPeople';
 import ServiceBanner from '../ServiceBanner/ServiceBanner';
 import Services from '../Services/Services';
 import { Breadcrumb } from 'react-bootstrap';
-import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import AboutUs from '../AboutUs/AboutUs';
 import Activity from '../Activity/Activity';
