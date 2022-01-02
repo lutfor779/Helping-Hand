@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
+import Donation from './pages/Donation/Donation';
 import ServiceHome from './pages/Services/ServiceHome/ServiceHome';
 import AuthProvider from './context/AuthProvider';
 import Login from './pages/Login/Login/Login';
@@ -23,6 +24,7 @@ import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
+
 
       <AuthProvider>
         <BrowserRouter>
@@ -45,7 +47,7 @@ function App() {
             </Route>
 
             <Route path="/contact" element={<Contact></Contact>} />
-            <Route path="donation" element={<h1>Donation</h1>} />
+            <Route path="donation" element={<Donation />} />
             <Route path="services" element={
               <PrivateRoute><ServiceHome /></PrivateRoute>
             } />
