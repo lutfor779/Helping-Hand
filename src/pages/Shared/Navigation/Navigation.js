@@ -21,6 +21,9 @@ const Navigation = () => {
                         <LinkContainer to="/donation" >
                             <Nav.Link>Donation</Nav.Link>
                         </LinkContainer>
+                        <LinkContainer to="/contact" >
+                            <Nav.Link>Contact</Nav.Link>
+                        </LinkContainer>
 
                         <LinkContainer to="/services">
                             <Nav.Link>Services</Nav.Link>
