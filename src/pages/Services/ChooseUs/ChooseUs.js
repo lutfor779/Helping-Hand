@@ -1,25 +1,25 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { BsPlusSquare } from "react-icons/bs";
-import choose from '../../../images/choose.jpg';
+import choose from '../../../images/chose.jpg';
 import ceo from '../../../images/player-1.png';
 import "./ChooseUs.css";
 
 const ChooseUs = () => {
   return (
-    <div className="choose-area py-5" style={{ backgroundColor: "#FFEBCD" }}>
+    <div className="choose-area py-5">
       <Container>
         <Row className="justify-content-between">
-          <Col md={5}>
+          <Col md={6}>
             <div className="single-choose  mb-3">
                 <img src={choose} style={{width:'100%'}} className="img-fluid" alt="" />
             </div>
           </Col>
-          <Col md={5}>
+          <Col md={6}>
             <div className="single-choose mb-3">
                 <h6 className="text-uppercase theme-color"> <BsPlusSquare /> who we are</h6>
                 <h3>Why Choose Us</h3>
-                <p>You choose us for our avilability and fund donation service. Our every volunteers works for ours. They done 100 + projects succcessfully.Donate to families with vulnerable children raised by single mothers. Empower vulnerable families for sustainability. View Portfolio. Experienced Team. Subscribe For Newsletter. Highlights: Portfolio Available, Volunteering Option Available, Newsletter Available.</p>
+                <p>You choose us for our avilability and fund donation service. Our every volunteers works for ours. They done 100 + projects succcessfully.Donate to families with vulnerable children raised by single mothers. Empower vulnerable families for sustainability. View Portfolio. Experienced Team.</p>
                 <div className="ceo-area theme-bg text-white rounded p-4">
                     <ul>
                         <li>Non profit crow funding agency</li>

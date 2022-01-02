@@ -2,22 +2,26 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import useAuth from '../../../hooks/useAuth';
+import logo from '../../../images/logo1.png';
+import './Navigation.css'
 
 const Navigation = () => {
     const { user, admin, logOut } = useAuth();
 
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="light" className='py-3' variant="light">
             <Container>
                 <LinkContainer to="/">
-                    <Navbar.Brand >Helping Hand</Navbar.Brand>
+                    <Navbar.Brand >
+                        <img src={logo} height="35"  alt="logo" />
+                    </Navbar.Brand>
                 </LinkContainer>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
 
-                    <Nav className="me-auto">
+                    <Nav className="mx-auto">
                         <LinkContainer to="/getStarted" >
                             <Nav.Link>Get Started</Nav.Link>
                         </LinkContainer>
@@ -25,12 +29,13 @@ const Navigation = () => {
                         <LinkContainer to="/donation" >
                             <Nav.Link>Donation</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/contact" >
-                            <Nav.Link>Contact</Nav.Link>
+                        
+                        <LinkContainer to="/about">
+                            <Nav.Link>About Us</Nav.Link>
                         </LinkContainer>
 
-                        <LinkContainer to="/services">
-                            <Nav.Link>Services</Nav.Link>
+                        <LinkContainer to="/contact" >
+                            <Nav.Link>Contact Us</Nav.Link>
                         </LinkContainer>
                     </Nav>
 
@@ -50,7 +55,7 @@ const Navigation = () => {
                         {
                             user.email ?
                                 <Button
-                                    variant='danger'
+                                    className='button-color border-0'
                                     onClick={logOut}>Logout</Button>
                                 :
                                 <LinkContainer to="/login">

@@ -9,7 +9,7 @@ const AboutUs = () => {
   return (
     <div>
       {/* section title end */}
-      <section className="aboutus-area py-5">
+      <section className="aboutus-area pt-5">
         <div className="container">
           <div className="row mb-5">
             <div className="col-md-6">
@@ -24,9 +24,9 @@ const AboutUs = () => {
             </div>
             <div className="col-md-6">
               <div className="aboutus-right ">
-                <h6 className="text-uppercase theme-color">
+                <h6 className="theme-color">
                   {" "}
-                  <BsPlusSquareFill /> about us
+                  <BsPlusSquareFill /> ABOUT OUR SERVICES
                 </h6>
                 <h3>Welcome to our Donation</h3>
                 <p>
