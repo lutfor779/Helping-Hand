@@ -10,25 +10,18 @@ const Home = () => {
     const { isLoading } = useAuth();
 
     return (
-<<<<<<< HEAD
+
         isLoading ? <h1>Loading</h1>
             :
 
             <div>
                 <Header />
+                <Banner />
+
                 <About />
                 <LatestNews />
                 <Footer />
             </div>
-=======
-        <div>
-            <Header />
-            <Banner />
-            <About />
-            <LatestNews />
-            <Footer />
-        </div>
->>>>>>> main
     );
 };
 

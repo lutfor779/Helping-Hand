@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
-    const { user, logOut } = useAuth();
+    const { user, admin, logOut } = useAuth();
 
 
     return (
@@ -35,6 +35,12 @@ const Navigation = () => {
                     </Nav>
 
                     <Nav>
+                        {
+                            admin && <LinkContainer to="/adminPanel">
+                                <Nav.Link>Admin Panel</Nav.Link>
+                            </LinkContainer>
+                        }
+
                         {
                             user.displayName && <Navbar.Text>
                                 {user.displayName} &nbsp;

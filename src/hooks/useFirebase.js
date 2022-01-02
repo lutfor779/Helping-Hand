@@ -79,6 +79,7 @@ const useFirebase = () => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setIsLoading(true);
             if (user) {
                 setUser(user);
                 setError("");

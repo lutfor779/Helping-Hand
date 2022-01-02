@@ -7,7 +7,7 @@ import '../style.css';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, error, setError, signInWithGoogle, signInWithEmailPassword, logOut } = useAuth();
+    const { error, setError, signInWithGoogle, signInWithEmailPassword } = useAuth();
 
     const location = useLocation();
     const navigate = useNavigate();
