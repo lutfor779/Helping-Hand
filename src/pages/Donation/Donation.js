@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './donation.css';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from './CheckoutForm/CheckoutForm';
 
 const Donation = () => {
     const [amount, setAmount] = useState('');
     console.log(amount)
+    const stripePromise = loadStripe('pk_test_51JvrhSADdTbXZK36qpL6RcLHtpgImTVxEfM6IDSUkA2LUw0cZAuYD7F0fXZI6dFedosjp6kji0QsIVStSdul9uAC00A6DtoiiB')
     return (
         <div className='donation-container row'>
             <div className="col-md-6 d-flex align-items-center justify-content-center">
@@ -23,8 +27,13 @@ const Donation = () => {
                         <button>One Time</button>
                         <button>Monthly</button>
                     </div>
+                    <div style={{ background: 'white', padding: '15px' }} className="mt-5">
+                        <Elements stripe={stripePromise}>
+                            <CheckoutForm amount={amount} />
+                        </Elements>
+                    </div>
 
-                    <button className='continue'>Continue</button>
+
                 </div>
 
             </div>

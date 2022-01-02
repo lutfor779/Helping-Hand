@@ -1,10 +1,10 @@
-import { CircularProgress } from '@mui/material';
+
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 
-const CheckoutForm = ({ appointment }) => {
-    const { price, patientName, _id } = appointment;
+const CheckoutForm = ({ amount }) => {
+
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useAuth();
@@ -14,17 +14,17 @@ const CheckoutForm = ({ appointment }) => {
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState('');
 
-    useEffect(() => {
-        fetch('https://evening-thicket-89282.herokuapp.com/create-payment-intent', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ price })
-        })
-            .then(res => res.json())
-            .then(data => setClientSecret(data.clientSecret))
-    }, [price])
+    // useEffect(() => {
+    //     fetch('https://evening-thicket-89282.herokuapp.com/create-payment-intent', {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ price })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => setClientSecret(data.clientSecret))
+    // }, [price])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -58,7 +58,7 @@ const CheckoutForm = ({ appointment }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: patientName,
+                        name: user.displayName,
                         email: user?.email
                     },
                 },
@@ -82,16 +82,16 @@ const CheckoutForm = ({ appointment }) => {
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
 
-            const url = `http://localhost:5000/appointments/${_id}`;
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(payment)
-            })
-                .then(res => res.json())
-                .then(data => console.log(data))
+            // const url = `http://localhost:5000/appointments/${_id}`;
+            // fetch(url, {
+            //     method: 'PUT',
+            //     headers: {
+            //         'content-type': 'application/json'
+            //     },
+            //     body: JSON.stringify(payment)
+            // })
+            //     .then(res => res.json())
+            //     .then(data => console.log(data))
         }
 
 
@@ -106,19 +106,19 @@ const CheckoutForm = ({ appointment }) => {
                         style: {
                             base: {
                                 fontSize: '16px',
-                                color: '#424770',
+                                color: 'black',
                                 '::placeholder': {
-                                    color: '#aab7c4',
+                                    color: 'black',
                                 },
                             },
                             invalid: {
-                                color: '#9e2146',
+                                color: 'black',
                             },
                         },
                     }}
                 />
-                {processing ? <CircularProgress /> : <button type="submit" disabled={!stripe || success}>
-                    Pay ${price}
+                {processing ? <h1>Loading</h1> : <button style={{ width: '90%', marginTop: '10px' }} type="submit" disabled={!stripe || success}>
+                    Pay $ {amount}
                 </button>}
             </form>
             {error && <p style={{ color: "red" }}>{error}</p>}
