@@ -1,14 +1,14 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
-import Navigation from '../../Shared/Navigation/Navigation';
 import HelpPeople from '../HelpPeople/HelpPeople';
 import ServiceBanner from '../ServiceBanner/ServiceBanner';
 import Services from '../Services/Services';
+import Header from '../../Shared/Header/Header';
 
 const ServiceHome = () => {
     return (
         <div>
-            <Navigation />
+            <Header />
             <ServiceBanner />
             <Services />
             <HelpPeople />
