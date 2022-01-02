@@ -5,7 +5,7 @@ const EventDetail = () => {
     const { id } = useParams();
 
     const [event, setEvent] = useState({});   //use redux for store data
-
+    console.log(event)
     useEffect(() => {
 
         fetch(`http://localhost:5000/events/${id}`)
@@ -19,9 +19,14 @@ const EventDetail = () => {
     // console.log(event);
 
     return (
-        <div>
-            <h1>Event Detail of {id}</h1>
-            <h1>Event name {event.title}</h1>
+        <div className='row'>
+            <div className="col-md-6">
+                <img style={{ width: '90%', height: '50vh' }} src={event?.image} alt="" />
+            </div>
+            <div className="col-md-6">
+                <h1>Event name {event.title}</h1>
+                <p> {event.description}</p>
+            </div>
         </div>
     );
 };

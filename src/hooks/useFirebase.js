@@ -41,7 +41,7 @@ const useFirebase = () => {
             .catch((err) => {
                 setError(err.message);
             })
-            .finally(setIsLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
     const signInWithEmailPassword = (email, password, location, navigate) => {
@@ -56,7 +56,7 @@ const useFirebase = () => {
             .catch((err) => {
                 setError(err.message);
             })
-            .finally(setIsLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
     const signInWithGoogle = (location, navigate) => {
@@ -73,13 +73,13 @@ const useFirebase = () => {
                 navigate(destination);
             })
             .catch(err => setError(err.message))
-            .finally(setIsLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setIsLoading(true);
+
             if (user) {
                 setUser(user);
                 setError("");
@@ -118,17 +118,17 @@ const useFirebase = () => {
             },
             body: JSON.stringify(user)
         })
-            .then(() => setIsLoading(false))
+
     }
 
     // check admin
     useEffect(() => {
-        setIsLoading(true);
+
         fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data);
-                setIsLoading(false);
+
             });
     }, [user.email]);
 

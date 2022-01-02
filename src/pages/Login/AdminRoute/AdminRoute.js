@@ -7,7 +7,7 @@ const AdminRoute = ({ children, ...rest }) => {
     let location = useLocation();
 
 
-    if (isLoading) return <h1>Loading</h1>
+    if (isLoading) { return <h1>Loading</h1> }
 
     if (user?.email && admin) {
         return children;
