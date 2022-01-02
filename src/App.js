@@ -6,6 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
+<<<<<<< HEAD
 import ServiceHome from './pages/Services/ServiceHome/ServiceHome';
 import AuthProvider from './context/AuthProvider';
 import Login from './pages/Login/Login/Login';
@@ -16,38 +17,56 @@ import AdminHome from './pages/AdminPanel/AdminHome/AdminHome';
 import MakeAdmin from './pages/AdminPanel/MakeAdmin/MakeAdmin';
 import AddEvent from './pages/AdminPanel/AddEvent/AddEvent';
 
+=======
+import Contact from './pages/Contact/Contact';
+>>>>>>> main
 
 function App() {
   return (
     <div className="App">
-      <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />}>
-              <Route index element={<Home />} />
-            </Route>
-            <Route path="login" element={<Login />}></Route>
-            <Route path="resister" element={<Resister />}></Route>
+<<<<<<< HEAD
+  <AuthProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route index element={<Home />} />
+        </Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="resister" element={<Resister />}></Route>
 
-            <Route path="getStarted" element={<EventsHome />} />
-            <Route path="eventDetail/:id" element={<EventDetail />} />
-
-
-            <Route path="adminPanel" element={
-              <AdminHome />
-            } >
-              <Route path="makeAdmin" element={<MakeAdmin />} />
-              <Route path="addEvent" element={<AddEvent />} />
-            </Route>
+        <Route path="getStarted" element={<EventsHome />} />
+        <Route path="eventDetail/:id" element={<EventDetail />} />
 
 
-            <Route path="donation" element={<h1>Donation</h1>} />
-            <Route path="services" element={<ServiceHome />} />
-            <Route path="*" element={<h1>Not found</h1>} />
-          </Routes>
-        </BrowserRouter>
-      </AuthProvider>
-    </div>
+        <Route path="adminPanel" element={
+          <AdminHome />
+        } >
+          <Route path="makeAdmin" element={<MakeAdmin />} />
+          <Route path="addEvent" element={<AddEvent />} />
+        </Route>
+
+
+        <Route path="donation" element={<h1>Donation</h1>} />
+        <Route path="services" element={<ServiceHome />} />
+        <Route path="*" element={<h1>Not found</h1>} />
+      </Routes>
+    </BrowserRouter>
+  </AuthProvider>
+=======
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+            <Route index element={<Home />} />
+          </Route>
+          <Route path="getStarted" element={<h1>Get Started</h1>} />
+          <Route path="donation" element={<h1>Donation</h1>} />
+          <Route path="/contact" element={<Contact></Contact>} />
+          <Route path="services" element={<h1>Services</h1>} />
+          <Route path="*" element={<h1>Not found</h1>} />
+        </Routes>
+      </BrowserRouter>
+>>>>>>> main
+    </div >
   );
 }
 
