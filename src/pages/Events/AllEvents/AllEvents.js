@@ -25,8 +25,8 @@ const AllEvents = () => {
     return (
         <div>
             <Container>
-                <h1>Upcoming Events</h1>
-                
+                <h1 className='text-center my-5'>Upcoming Events</h1>
+
                 <Row xs={1} md={2} lg={3} className="g-4">
 
                     {
