@@ -1,11 +1,10 @@
 import React from 'react';
-import img1 from '../../../images/sponsor1.png'
-import img2 from '../../../images/sponsor2.png'
-import img3 from '../../../images/sponsor3.png'
-import img4 from '../../../images/sponsor4.png'
-import img5 from '../../../images/sponsor5.png'
-import img6 from '../../../images/sponsor6.png'
-import './DonationPartners.css'
+import img1 from '../../../images/sponsor1.png';
+import img2 from '../../../images/sponsor2.png';
+import img3 from '../../../images/sponsor3.png';
+import img4 from '../../../images/sponsor4.png';
+import img5 from '../../../images/sponsor5.png';
+import img6 from '../../../images/sponsor6.png';
 
 const DonationPartners = () => {
     return (

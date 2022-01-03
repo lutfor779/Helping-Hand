@@ -21,7 +21,6 @@ const AllEvents = () => {
             });
     }, [setIsLoading]);
 
-
     return (
         <div>
             <Container>
