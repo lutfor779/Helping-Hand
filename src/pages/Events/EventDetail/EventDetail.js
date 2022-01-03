@@ -26,11 +26,16 @@ const EventDetail = () => {
   const { register, handleSubmit, reset } = useForm();
   const [rating, setRating] = React.useState();
 
-  const onSubmit = (e,data) => {
+
+  //  joining in an events
+  const handleJoining = () => {
+
+  }
+  const onSubmit = (e, data) => {
     console.log(data);
     data["rating"] = rating;
     const image = event.image;
-        data.image =image; 
+    data.image = image;
     axios
       .post("http://localhost:5000/feedback", data)
       .then((res) => {
@@ -57,6 +62,9 @@ const EventDetail = () => {
                 <h1> {event.title}</h1>
                 <img src={event.image} className="img-fluid" alt="" />
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
+                <button onClick={handleJoining}>Join in this event as volunteer</button>
+
+
                 <div className="feedback area mt-3">
                   <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
