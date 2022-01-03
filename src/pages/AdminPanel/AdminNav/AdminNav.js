@@ -34,11 +34,6 @@ const AdminNav = () => {
                                 <Nav.Link>Add Events</Nav.Link>
                             </LinkContainer>
                            
-
-                            <LinkContainer to="/services">
-                                <Nav.Link>Services</Nav.Link>
-                            </LinkContainer>
-
                             {
                                 user.displayName && <Navbar.Text>
                                     {user.displayName} &nbsp;
