@@ -14,12 +14,12 @@ const Donation = () => {
     return (
         <>
             <Header />
-            <div className='donation-container row'>
-                <div className='d-flex align-items-center justify-content-center'>
-                    <div className="col-12 col-md-6">
+            <div className='donation-container'>
+                <div className='row align-items-center justify-content-center'>
+                    <div className="col-12 col-md-6 col-lg-6">
                         <h1 className='text-light fw-1 fs-1'>Donate</h1>
                     </div>
-                    <div className="col-12 col-md-6 ">
+                    <div className="col-12 col-md-6 col-lg-6">
                         <div className='donation'>
                             <h3>Choose your amount</h3>
                             <div className='d-flex justify-content-between'>
