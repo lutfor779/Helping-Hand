@@ -4,6 +4,7 @@ import Header from "../../Shared/Header/Header";
 import Loaders from "../../Shared/Loaders/Loaders";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
+import Feedback from "../Feedback/Feedback";
 import LatestNews from "../LatestNews/LatestNews";
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
           <Header />
           <Banner />
           <About />
+          <Feedback />
           <LatestNews />
           <Footer />
         </div>

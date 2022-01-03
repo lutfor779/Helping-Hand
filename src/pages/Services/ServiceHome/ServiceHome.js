@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import HelpPeople from '../HelpPeople/HelpPeople';
-import ServiceBanner from '../ServiceBanner/ServiceBanner';
+// import ServiceBanner from '../ServiceBanner/ServiceBanner';
 import Services from '../Services/Services';
 import { Breadcrumb } from 'react-bootstrap';
 import Header from '../../Shared/Header/Header';
@@ -13,9 +13,6 @@ const ServiceHome = () => {
     return (
         <div>
             <Header />
-            <ServiceBanner />
-            <Services />
-            <HelpPeople />
             <div className="section-header mb-5">
                 <div className="container">
                     <div className="row text-center py-5">
@@ -31,6 +28,10 @@ const ServiceHome = () => {
                     </div>
                 </div>
             </div>
+            {/* <ServiceBanner /> */}
+            <Services />
+            <HelpPeople />
+            
             <Activity />
             <ChooseUs />
             <AboutUs />
