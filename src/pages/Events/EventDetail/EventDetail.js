@@ -43,7 +43,7 @@ const EventDetail = () => {
         swal("Something went wrong!", `${error.message}`, "error");
       });
   };
-  console.log(event);
+  // console.log(event);
 
   return (
     <>
