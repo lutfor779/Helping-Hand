@@ -8,7 +8,7 @@ import './Services.css'
 const Services = () => {
     return (
         <div class="container my-5 text-center">
-            <h1 className='my-4'>Our Services</h1>
+            <h1 className='mb-4'>Our Services</h1>
             <div class="row row-cols-1 row-cols-lg-4 g-3 g-lg-5 mx-5">
                 <div class="col">
                     <div class="p-3 bg-food custom-shadow">

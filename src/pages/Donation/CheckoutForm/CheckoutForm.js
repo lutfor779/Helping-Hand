@@ -14,17 +14,17 @@ const CheckoutForm = ({ amount }) => {
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState('');
 
-    // useEffect(() => {
-    //     fetch('https://evening-thicket-89282.herokuapp.com/create-payment-intent', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ price })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => setClientSecret(data.clientSecret))
-    // }, [price])
+    useEffect(() => {
+        fetch('http://localhost:5000/create-payment-intent', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ amount })
+        })
+            .then(res => res.json())
+            .then(data => setClientSecret(data.clientSecret))
+    }, [amount])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -58,7 +58,7 @@ const CheckoutForm = ({ amount }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: user.displayName,
+                        name: user?.displayName,
                         email: user?.email
                     },
                 },
