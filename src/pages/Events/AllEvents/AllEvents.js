@@ -22,7 +22,7 @@ const AllEvents = () => {
         <div>
             <Container>
 
-                <Row xs={1} md={2} lg={3} className="g-4 py-5">
+            <Row xs={1} md={2} lg={3} className="g-4 py-5">
                 <h1>Upcoming Events</h1>
                 
                 <Row xs={1} md={2} lg={3} className="g-4">
@@ -31,6 +31,7 @@ const AllEvents = () => {
                         events.length !== 0 && events.map(event => <Event key={event._id} event={event} />)
                     }
                 </Row>
+            </Row>
 
             </Container>
         </div>
