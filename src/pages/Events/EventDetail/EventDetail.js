@@ -1,91 +1,114 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
-import './EventDetails.css';
-import Footer from '../../Shared/Footer/Footer';
-import Header from '../../Shared/Header/Header';
+import React, { useEffect, useState } from "react";
+import { Accordion } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import Footer from "../../Shared/Footer/Footer";
+import Header from "../../Shared/Header/Header";
+import { useForm } from "react-hook-form";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
+import swal from "sweetalert";
+import axios from "axios";
+import useAuth from "../../../hooks/useAuth";
 
 const EventDetail = () => {
-    const { id } = useParams();
-    const { user } = useAuth();
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-    const [message, setMessage] = useState('');
-    const [rating, setRating] = useState('');
+  const { id } = useParams();
 
-    const [event, setEvent] = useState({});   //use redux for store data
-    console.log(event)
-    useEffect(() => {
+  const [event, setEvent] = useState({}); //use redux for store data
 
-        fetch(`http://localhost:5000/events/${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setEvent(data);
+  useEffect(() => {
+    fetch(`http://localhost:5000/events/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setEvent(data);
+      });
+  }, [id]);
+  const { user } = useAuth();
+  const { register, handleSubmit, reset } = useForm();
+  const [rating, setRating] = React.useState();
 
-            })
-    }, [id]);
+  const onSubmit = (e,data) => {
+    console.log(data);
+    data["rating"] = rating;
+    const image = event.image;
+        data.image =image; 
+    axios
+      .post("http://localhost:5000/feedback", data)
+      .then((res) => {
+        if (res.data.acknowledged) {
+          swal("Good job!", "Feedback Added", "success");
+        }
+        reset();
+      })
+      .catch((error) => {
+        swal("Something went wrong!", `${error.message}`, "error");
+      });
+  };
+  console.log(event);
 
-    const review = {
-        name: name,
-        email: email,
-        message: message,
-        rating: rating,
-        event: event?.title
-    }
-    console.log(review)
-    const handleReview = (e) => {
-        e.preventDefault()
-        fetch(`http://localhost:5000/review`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(review)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    alert(' Added Successfully');
-                    e.target.reset();
-                }
-            })
-    }
-    // console.log(event);
-
-    return (
-        <>
-            <Header />
-            <div className='row'>
-                <div className="col-md-6">
-                    <img style={{ width: '90%', height: '50vh' }} src={event?.image} alt="" />
+  return (
+    <>
+      <Header />
+      <div className="event-details py-5">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <div className="single-details">
+                {/* <h5>Event Detail of {id}</h1> */}
+                <h1> {event.title}</h1>
+                <img src={event.image} className="img-fluid" alt="" />
+                <h6 className="mt-3"> Event Date: {event.date}</h6>
+                <div className="feedback area mt-3">
+                  <Accordion defaultActiveKey="0">
+                    <Accordion.Item eventKey="0">
+                      <Accordion.Header className="theme-color">Give a Feedback</Accordion.Header>
+                      <Accordion.Body>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                          <input
+                            className="form-control mb-3"
+                            defaultValue={user.displayName}
+                            {...register("name")}
+                            placeholder="Your Name"
+                          />
+                          <input
+                            className="form-control mb-3"
+                            defaultValue={event.title}
+                            {...register("eventName")}
+                            placeholder="Event Name"
+                          />
+                          <textarea
+                            className="form-control mb-3"
+                            style={{ height: "150px" }}
+                            {...register("feedback")}
+                            placeholder="Feedback"
+                          />
+                          <div className="flex flex-col mb-3">
+                            <p className="text-gray-600 font-primary">
+                              Give a rating*
+                            </p>
+                            <Rating
+                              onChange={(rate) => setRating(rate)}
+                              emptySymbol={<FaRegStar />}
+                              fullSymbol={<FaStar />}
+                            />
+                          </div>
+                          <input
+                            className="btn theme-bg text-white px-4"
+                            type="submit"
+                            value="Submit Feedback"
+                          />
+                        </form>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
                 </div>
-                <div className="col-md-6">
-                    <h1>Event name {event.title}</h1>
-                    <p> {event?.description}</p>
-                    <p> {event?.place}</p>
-                    <p> {event?.date}</p>
-                    <button>Join in the event as a volunteer</button>
-                </div>
-
-
+              </div>
             </div>
-            <div className='row m-0 p-4 review'>
-                <h2>Give your review about {event?.title}</h2>
-                <form onSubmit={handleReview}>
-                    <input required onBlur={e => setName(e.target.value)} defaultValue={user?.displayName} placeholder='Name' type="text" /> <br />
-                    <input required onBlur={e => setEmail(e.target.value)} defaultValue={user?.email} placeholder='email' type="email" /> <br />
-                    <input required onBlur={e => setRating(e.target.value)} placeholder='Rate between 1-5' type="number" max={5} min={1} /> <br />
-                    <textarea required onBlur={e => setMessage(e.target.value)} placeholder='Your Message' type="text" /> <br />
-                    <button type="submit"> Submit</button>
-                </form>
-
-            </div>
-
-
-
-            <Footer />
-        </>
-    );
+          </div>
+        </div>
+      </div>
+      <Footer></Footer>
+    </>
+  );
 };
 
 export default EventDetail;

@@ -6,11 +6,7 @@ import Event from '../Event/Event';
 const AllEvents = () => {
     const { setIsLoading } = useAuth();
     const [events, setEvents] = useState([]);
-
     // here we will use redux replace of useState
-
-
-
     useEffect(() => {
         setIsLoading(true);
         fetch(`http://localhost:5000/events`)
@@ -25,6 +21,8 @@ const AllEvents = () => {
     return (
         <div>
             <Container>
+
+                <Row xs={1} md={2} lg={3} className="g-4 py-5">
                 <h1>Upcoming Events</h1>
                 
                 <Row xs={1} md={2} lg={3} className="g-4">
