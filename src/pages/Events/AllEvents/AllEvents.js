@@ -2,24 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import Event from '../Event/Event';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchEvents } from '../../../redux/slices/eventsSlice';
 
 const AllEvents = () => {
     const { setIsLoading } = useAuth();
     const [events, setEvents] = useState([]);
 
     // here we will use redux replace of useState
-
-
-
+    const dispatch = useDispatch()
     useEffect(() => {
-        setIsLoading(true);
-        fetch(`http://localhost:5000/events`)
-            .then(res => res.json())
-            .then(data => {
-                setEvents(data);
-                setIsLoading(false);
-            });
-    }, [setIsLoading]);
+        dispatch(fetchEvents());
+    }, [dispatch]);
+    const allEvents = useSelector((state) => state.events.services)
+    console.log(events)
+
+
+    // useEffect(() => {
+    //     setIsLoading(true);
+    //     fetch(`http://localhost:5000/events`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setEvents(data);
+    //             setIsLoading(false);
+    //         });
+    // }, [setIsLoading]);
 
     return (
 
