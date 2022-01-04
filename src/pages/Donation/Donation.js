@@ -8,13 +8,13 @@ const Donation = () => {
     console.log(amount)
     const stripePromise = loadStripe('pk_test_51JvrhSADdTbXZK36qpL6RcLHtpgImTVxEfM6IDSUkA2LUw0cZAuYD7F0fXZI6dFedosjp6kji0QsIVStSdul9uAC00A6DtoiiB')
     return (
-        <div className='py-5' style={{backgroundColor:'#f9cbbb'}}>
+        <div className='py-5 m-0' style={{backgroundColor:'#f9cbbb'}}>
             <div className='row align-items-center justify-content-center mx-lg-5'>
                 <div className="col-12 col-md-6 col-lg-6 m-0 p-0 h-100">
                     <div className='bg-dark text-light px-5 ms-lg-5 py-5'>
                         <h4 className='mb-4 text-center'>Choose Your Amount</h4>
                         <div className='d-flex justify-content-center text-center'>
-                            <div class="row row-cols-4 g-2 g-lg-3">
+                            <div className="row row-cols-4 g-2 g-lg-3">
                                 <div>
                                     <p onClick={() => setAmount(10)} className='border rounded-3 px-4 m-0'>$10</p>
                                 </div>

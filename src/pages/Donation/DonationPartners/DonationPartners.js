@@ -8,38 +8,38 @@ import img6 from '../../../images/sponsor6.png';
 
 const DonationPartners = () => {
     return (
-        <div class="container text-center my-5">
+        <div className="container text-center my-5">
             <h6 style={{color: "#f15b43"}}>Who Help Us</h6>
             <h3>Our Partners and Donors</h3>
             <p className='w-75 mx-auto'>We’re helping non-profit fundraising helping hand organization. Our charity activities are taken place around the world. </p>
-            <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-                <div class="col">
-                    <div class="p-3">
+            <div className="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+                <div className="col">
+                    <div className="p-3">
                         <img src={img1} className='img-fluid'  alt="" />
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3">
+                <div className="col">
+                    <div className="p-3">
                         <img src={img2} className='img-fluid' alt="" />
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3">
+                <div className="col">
+                    <div className="p-3">
                         <img src={img3} className='img-fluid' alt="" />
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3">
+                <div className="col">
+                    <div className="p-3">
                         <img src={img4} className='img-fluid' alt="" />
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3">
+                <div className="col">
+                    <div className="p-3">
                         <img src={img5} className='img-fluid' alt="" />
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3">
+                <div className="col">
+                    <div className="p-3">
                         <img src={img6} className='img-fluid' alt="" />
                     </div>
                 </div>
