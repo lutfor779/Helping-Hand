@@ -8,19 +8,26 @@ const Event = ({ event }) => {
     return (
         <Col>
             <Card className="h-100 rounded">
-                <Card.Img variant="top" src={image} height="250" className="rounded-top" />
+                <Card.Img variant="top" src={image} height="200" className="rounded-top" />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
-
                     <Card.Text>Date: {date}</Card.Text>
+                </Card.Body>
 
+                <Card.Footer>
                     <Link to={`/eventDetail/${_id}`}>
+<<<<<<< HEAD
                         <Button variant="success " >Detail</Button>
                     </Link>
 
 
 
                 </Card.Body>
+=======
+                        <Button variant="success px-5 " >Detail</Button>
+                    </Link>
+                </Card.Footer>
+>>>>>>> 0022485914730076fabe0bf2c80c2411247cab3d
             </Card>
         </Col>
     );

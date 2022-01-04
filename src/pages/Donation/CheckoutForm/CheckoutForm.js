@@ -15,7 +15,7 @@ const CheckoutForm = ({ amount }) => {
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://serene-bastion-42312.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -73,34 +73,12 @@ const CheckoutForm = ({ amount }) => {
             setSuccess('Your payment process successfully')
             console.log(paymentIntent)
             setProcessing(false)
-
-            //save to database
-            const payment = {
-                amount: paymentIntent.amount,
-                created: paymentIntent.created,
-                last4: paymentMethod.card.last4,
-                transaction: paymentIntent.client_secret.slice('_secret')[0]
-            }
-
-            // const url = `http://localhost:5000/appointments/${_id}`;
-            // fetch(url, {
-            //     method: 'PUT',
-            //     headers: {
-            //         'content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify(payment)
-            // })
-            //     .then(res => res.json())
-            //     .then(data => console.log(data))
         }
-
-
-
     }
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='text-center'>
                 <CardElement
                     options={{
                         style: {
@@ -117,7 +95,7 @@ const CheckoutForm = ({ amount }) => {
                         },
                     }}
                 />
-                {processing ? <h1>Loading</h1> : <button style={{ width: '90%', marginTop: '10px' }} type="submit" disabled={!stripe || success}>
+                {processing ? <p className='text-danger mt-3'>Loading...</p> : <button style={{ backgroundColor: "#f15b43" }} className='btn w-50 mx-auto text-light mt-3' type="submit" disabled={!stripe || success}>
                     Pay $ {amount}
                 </button>}
             </form>

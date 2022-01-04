@@ -11,7 +11,7 @@ import img8 from "../../../images/trash.jpg"
 
 const Activity = () => {
   return (
-    <div className="latest-news py-5" style={{ backgroundColor: "#FEF6F3" }}>
+    <div className="latest-news py-5">
       <Container>
         <Row className="justify-content-center">
           <Col xs={6}>

@@ -1,6 +1,4 @@
 import React from 'react';
-import { BsArrowUpRightCircle } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
 import './ServiceBanner.css';
 
 const ServiceBanner = () => {

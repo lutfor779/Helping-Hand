@@ -8,7 +8,7 @@ const MakeAdmin = () => {
     const [users, setUsers] = useState([]); // use redux here
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://serene-bastion-42312.herokuapp.com/users`)
             .then(res => res.json())
             .then(data => {
                 setUsers(data);
@@ -18,7 +18,9 @@ const MakeAdmin = () => {
     return (
         <div>
             <Container>
-                <Stack gap={3}>
+                <h3 className='mt-5 mb-3 text-center'>Our Admin Panel</h3>
+
+                <Stack gap={3} className='w-75 mx-auto'>
                     {
                         users.length > 0
                         &&
