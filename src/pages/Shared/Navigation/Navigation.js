@@ -3,11 +3,9 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/logo1.png';
-import './Navigation.css'
 
 const Navigation = () => {
     const { user, admin, logOut } = useAuth();
-
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
@@ -67,7 +65,7 @@ const Navigation = () => {
                                     onClick={logOut}>Logout</Button>
                                 :
                                 <LinkContainer to="/login">
-                                    <Nav.Link>Login</Nav.Link>
+                                    <Nav.Link><p className='button-color border-0'>Login</p></Nav.Link>
                                 </LinkContainer>
                         }
                     </Nav>
