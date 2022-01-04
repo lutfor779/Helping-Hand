@@ -55,6 +55,7 @@ function App() {
                 <AdminHome />
               } >
                 <Route path="makeAdmin" element={<MakeAdmin />} />
+                <Route path="projectMembers" element={<Credits />} />
                 <Route path="addEvent" element={<AddEvent />} />
                 <Route path="addCauses" element={<AddCauses />} />
                 <Route path="participant" element={<ParticipentList />} >

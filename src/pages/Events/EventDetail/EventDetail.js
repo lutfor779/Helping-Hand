@@ -17,6 +17,7 @@ const EventDetail = () => {
   const [rating, setRating] = React.useState();
   const [event, setEvent] = useState({});
   const [isJoin, setIsJoin] = useState([]);
+  const [clicked, setClicked] = useState(false)
 
 
 
@@ -47,6 +48,7 @@ const EventDetail = () => {
         console.log(data)
         if (data.modifiedCount) {
           alert('Join  Successfully');
+          setClicked(!clicked)
 
         }
       })
@@ -59,8 +61,10 @@ const EventDetail = () => {
       .then((data) => {
         const x = data?.events?.filter(y => y === event?.title)
         setIsJoin(x)
+        console.log(data)
+        console.log(x)
       });
-  }, [user?.email, event?.title]);
+  }, [user?.email, event?.title, clicked]);
 
 
   const onSubmit = (e, data) => {
@@ -93,10 +97,11 @@ const EventDetail = () => {
                 {/* <h5>Event Detail of {id}</h1> */}
                 <h1> {event.title}</h1>
                 <img src={event.image} className="img-fluid" alt="" />
+                <p>{event?.description}</p>
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
 
-                {isJoin?.length !== 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
-                {isJoin?.length === 0 && <h3 >You Already joined</h3>}
+                {isJoin?.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
+                {isJoin?.length !== 0 && <h3 >You Already joined as a volunteer</h3>}
 
 
 

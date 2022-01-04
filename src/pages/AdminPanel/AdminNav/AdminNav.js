@@ -48,9 +48,7 @@ const AdminNav = () => {
                             </LinkContainer>
 
 
-                            <LinkContainer to="participant" >
-                                <Nav.Link>Participant list</Nav.Link>
-                            </LinkContainer>
+
 
 
                             <LinkContainer to="addCauses" >
