@@ -10,7 +10,7 @@ const Navigation = () => {
 
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" className='py-3' variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="light" sticky="top" className='py-3' variant="light">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand >
@@ -24,6 +24,10 @@ const Navigation = () => {
                     <Nav className="mx-auto">
                         <LinkContainer to="/getStarted" >
                             <Nav.Link>Get Started</Nav.Link>
+                        </LinkContainer>
+
+                        <LinkContainer to="/causes" >
+                            <Nav.Link>Causes</Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to="/donation" >

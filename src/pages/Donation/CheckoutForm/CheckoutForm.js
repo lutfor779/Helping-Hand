@@ -93,14 +93,11 @@ const CheckoutForm = ({ amount }) => {
             //     .then(res => res.json())
             //     .then(data => console.log(data))
         }
-
-
-
     }
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='text-center'>
                 <CardElement
                     options={{
                         style: {
@@ -117,7 +114,7 @@ const CheckoutForm = ({ amount }) => {
                         },
                     }}
                 />
-                {processing ? <h1>Loading</h1> : <button style={{ width: '90%', marginTop: '10px' }} type="submit" disabled={!stripe || success}>
+                {processing ? <p className='text-danger mt-3'>Loading...</p> : <button style={{backgroundColor: "#f15b43"}} className='btn w-50 mx-auto text-light mt-3' type="submit" disabled={!stripe || success}>
                     Pay $ {amount}
                 </button>}
             </form>

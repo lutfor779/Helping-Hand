@@ -33,12 +33,11 @@ const AdminNav = () => {
                             <LinkContainer to="addEvent" >
                                 <Nav.Link>Add Events</Nav.Link>
                             </LinkContainer>
-                           
 
-                            <LinkContainer to="/services">
-                                <Nav.Link>Services</Nav.Link>
+                            <LinkContainer to="addCauses" >
+                                <Nav.Link>Add Causes</Nav.Link>
                             </LinkContainer>
-
+                           
                             {
                                 user.displayName && <Navbar.Text>
                                     {user.displayName} &nbsp;

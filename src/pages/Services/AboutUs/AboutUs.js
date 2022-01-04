@@ -28,7 +28,7 @@ const AboutUs = () => {
                   {" "}
                   <BsPlusSquareFill /> ABOUT OUR SERVICES
                 </h6>
-                <h3>Welcome to our Donation</h3>
+                <h3>Welcome to Helping Hand</h3>
                 <p>
                   You choose us for our avilability and fund donation service.
                   Our every volunteers works for ours. They done 100 + projects

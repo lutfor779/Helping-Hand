@@ -1,18 +1,16 @@
 import React from 'react';
-import Activity from '../../Services/Activity/Activity';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
-import AllEvents from '../AllEvents/AllEvents';
+import Cause from '../Cause/Cause';
 
-const EventsHome = () => {
+const CausesHome = () => {
     return (
         <div>
             <Header />
-            <AllEvents />
-            <Activity />
+            <Cause />
             <Footer />
         </div>
     );
 };
 
-export default EventsHome;
+export default CausesHome;

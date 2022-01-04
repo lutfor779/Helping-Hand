@@ -32,6 +32,9 @@ const EventDetail = () => {
 
   }
   const onSubmit = (e, data) => {
+
+  const onSubmit = (data) => {
+
     console.log(data);
     data["rating"] = rating;
     const image = event.image;
@@ -48,7 +51,7 @@ const EventDetail = () => {
         swal("Something went wrong!", `${error.message}`, "error");
       });
   };
-  console.log(event);
+  // console.log(event);
 
   return (
     <>

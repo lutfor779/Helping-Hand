@@ -7,29 +7,29 @@ import './Services.css'
 
 const Services = () => {
     return (
-        <div class="container my-5 text-center">
+        <div className="container my-5 text-center">
             <h1 className='mb-4'>Our Services</h1>
-            <div class="row row-cols-1 row-cols-lg-4 g-3 g-lg-5 mx-5">
-                <div class="col">
-                    <div class="p-3 bg-food custom-shadow">
+            <div className="row row-cols-1 row-cols-lg-4 g-3 g-lg-5 mx-5">
+                <div className="col">
+                    <div className="p-3 bg-food custom-shadow">
                         <img src={img1} className='img-fluid w-50 rounded-pill custom-shadow bg-light' alt="" />
                         <h4 className='my-4'>Healthy Food</h4>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3 bg-water custom-shadow">
+                <div className="col">
+                    <div className="p-3 bg-water custom-shadow">
                         <img src={img2} className='img-fluid w-50 rounded-pill custom-shadow bg-light' alt="" />
                         <h4 className='my-4'>Clean Water</h4>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3 bg-medical custom-shadow">
+                <div className="col">
+                    <div className="p-3 bg-medical custom-shadow">
                         <img src={img3} className='img-fluid w-50 rounded-pill custom-shadow bg-light' alt="" />
                         <h4 className='my-4'>Medical Care</h4>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="p-3 bg-blood custom-shadow">
+                <div className="col">
+                    <div className="p-3 bg-blood custom-shadow">
                         <img src={img4} className='img-fluid w-50 rounded-pill custom-shadow bg-light' alt="" />
                         <h4 className='my-4'>Donate Blood</h4>
                     </div>
