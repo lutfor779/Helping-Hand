@@ -8,7 +8,7 @@ const Navigation = () => {
     const { user, admin, logOut } = useAuth();
 
 
-    return (
+    return (        
         <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
                 <LinkContainer to="/">

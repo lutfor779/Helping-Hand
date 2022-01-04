@@ -60,7 +60,6 @@ const AdminNav = () => {
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
-
         <Navbar bg="primary" variant="dark" expand={false}>
             <Container fluid>
                 <LinkContainer to="/">
