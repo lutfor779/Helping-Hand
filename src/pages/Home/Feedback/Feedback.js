@@ -22,7 +22,7 @@ const Feedback = () => {
     autoplay: true,
   };
 
-  console.log(feedback);
+  // console.log(feedback);
   return (
     <div className="client-review py-5 text-center">
       <div className="container">

@@ -4,6 +4,7 @@ import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import Loaders from "../../Shared/Loaders/Loaders";
 import Banner from "../Banner/Banner";
+import Faq from "../Faq/Faq";
 import Feedback from "../Feedback/Feedback";
 import LatestNews from "../LatestNews/LatestNews";
 
@@ -25,11 +26,12 @@ const Home = () => {
           <AboutUs />
           <Feedback />
           <LatestNews />
+          <Faq />
           <Footer />
         </div>
       )}
     </div>
   );
-      };
+};
 
 export default Home;

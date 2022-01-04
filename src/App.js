@@ -13,7 +13,12 @@ import MakeAdmin from './pages/AdminPanel/MakeAdmin/MakeAdmin';
 import AddEvent from './pages/AdminPanel/AddEvent/AddEvent';
 import Contact from './pages/Contact/Contact';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+
+import AddCauses from './pages/AdminPanel/AddCauses/AddCauses';
+import CausesHome from './pages/Causes/CausesHome/CausesHome';
+
 import DonationHome from './pages/Donation/DonationHome/DonationHome';
+
 
 function App() {
   return (
@@ -24,10 +29,12 @@ function App() {
             <Route path="/" element={<Home />}>
               <Route index element={<Home />} />
             </Route>
+            <Route path="/home" element={<Home />} />
             <Route path="login" element={<Login />}></Route>
             <Route path="resister" element={<Resister />}></Route>
 
             <Route path="getStarted" element={<EventsHome />} />
+            <Route path="causes" element={<CausesHome />} />
             <Route path="eventDetail/:id" element={<EventDetail />} />
 
             <Route path="adminPanel" element={
@@ -35,6 +42,7 @@ function App() {
             } >
               <Route path="makeAdmin" element={<MakeAdmin />} />
               <Route path="addEvent" element={<AddEvent />} />
+              <Route path="addCauses" element={<AddCauses />} />
             </Route>
 
             <Route path="/contact" element={<Contact></Contact>} />
