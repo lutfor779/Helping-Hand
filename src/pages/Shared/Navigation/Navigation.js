@@ -57,7 +57,9 @@ const Navigation = () => {
                                 {user.displayName} &nbsp;
                             </Navbar.Text>
                         }
-
+                        {user?.email && <LinkContainer to="/profile">
+                            <Nav.Link>My profile</Nav.Link>
+                        </LinkContainer>}
                         {
                             user.email ?
                                 <Button

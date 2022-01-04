@@ -9,9 +9,19 @@ import Rating from "react-rating";
 import swal from "sweetalert";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import { Button } from 'react-bootstrap';
 
 const EventDetail = () => {
   const { id } = useParams();
+
+  const { user } = useAuth();
+  const { register, handleSubmit, reset } = useForm();
+  const [rating, setRating] = React.useState();
+  const [event, setEvent] = useState({});
+  const [isJoin, setIsJoin] = useState([]);
+
+
+
   const [isJoin, setIsJoin] = useState([]);
   const [event, setEvent] = useState({}); //use redux for store data
 
@@ -22,15 +32,15 @@ const EventDetail = () => {
         setEvent(data);
       });
   }, [id]);
-  const { user } = useAuth();
-  const { register, handleSubmit, reset } = useForm();
-  const [rating, setRating] = React.useState();
+
 
   //  joining in an events
   const eventTitle = [event.title];
 
   const handleJoining = () => {
+
     fetch(`https://serene-bastion-42312.herokuapp.com/join/${user?.email}`, {
+
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
@@ -60,7 +70,7 @@ const EventDetail = () => {
 
   console.log(isJoin)
 
-  const onSubmit = (data) => {
+  const onSubmit = (e, data) => {
     console.log(data);
     data["rating"] = rating;
     const image = event.image;
@@ -92,8 +102,10 @@ const EventDetail = () => {
                 <img src={event.image} className="img-fluid" alt="" />
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
 
-                {isJoin?.length !== 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
-                {isJoin?.length === 0 && <h3 >You Already joined</h3>}
+                {isJoin.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
+                {isJoin.length !== 0 && <h3 >You Already joined</h3>}
+
+
 
 
                 <div className="feedback area mt-3">

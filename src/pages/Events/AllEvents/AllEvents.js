@@ -5,10 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../../redux/slices/eventsSlice';
 
 const AllEvents = () => {
+
+    const { setIsLoading } = useAuth();
+
+
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchEvents());
     }, [dispatch]);
+
+    const allEvents = useSelector((state) => state.events.services)
+    console.log()
+
+
 
     const allEvents = useSelector((state) => state.events.services)
 
@@ -21,10 +31,7 @@ const AllEvents = () => {
                     allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
                 }
             </Row>
-
         </Container>
-
-
     );
 };
 
