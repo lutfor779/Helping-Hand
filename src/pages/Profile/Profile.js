@@ -8,7 +8,7 @@ const Profile = () => {
     const [profile, setProfile] = useState({});
     const { user } = useAuth()
     useEffect(() => {
-        fetch(`http://localhost:5000/joinedEvents/${user?.email}`)
+        fetch(`https://serene-bastion-42312.herokuapp.com/joinedEvents/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setProfile(data)
