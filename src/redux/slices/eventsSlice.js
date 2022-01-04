@@ -4,6 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchEvents = createAsyncThunk(
     'events/fetchEvents',
     async () => {
+
         const response = await fetch('https://serene-bastion-42312.herokuapp.com/events')
             .then(res => res.json())
         return response

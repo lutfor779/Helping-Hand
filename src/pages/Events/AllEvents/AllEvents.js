@@ -5,25 +5,35 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../../redux/slices/eventsSlice';
 
 const AllEvents = () => {
-<<<<<<< HEAD
+
+
     const { setIsLoading } = useAuth();
 
 
     // here we will use redux 
-=======
->>>>>>> 0022485914730076fabe0bf2c80c2411247cab3d
+
+
+    const { setIsLoading } = useAuth();
+
+
+
+
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchEvents());
     }, [dispatch]);
-<<<<<<< HEAD
+
     const allEvents = useSelector((state) => state.events.services)
     console.log()
 
 
 
-=======
->>>>>>> 0022485914730076fabe0bf2c80c2411247cab3d
+
+
+    const allEvents = useSelector((state) => state.events.services)
+    console.log()
+
+
 
     const allEvents = useSelector((state) => state.events.services)
 
@@ -36,15 +46,13 @@ const AllEvents = () => {
                     allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
                 }
             </Row>
+            <Row>
+                {
+                    allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
+                }
+            </Row>
 
-<<<<<<< HEAD
-                    {
-                        allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
-                    }
-                </Row>
-=======
         </Container>
->>>>>>> 0022485914730076fabe0bf2c80c2411247cab3d
 
 
     );

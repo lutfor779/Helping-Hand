@@ -51,6 +51,11 @@ const AdminNav = () => {
 =======
 >>>>>>> 0022485914730076fabe0bf2c80c2411247cab3d
 
+                            <LinkContainer to="participant" >
+                                <Nav.Link>Participant list</Nav.Link>
+                            </LinkContainer>
+
+
                             <LinkContainer to="addCauses" >
                                 <Nav.Link>Add Causes</Nav.Link>
                             </LinkContainer>

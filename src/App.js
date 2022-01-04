@@ -23,7 +23,6 @@ import { useEffect, useState } from 'react';
 import Loaders from './pages/Shared/Loaders/Loaders';
 import Credits from './pages/AdminPanel/Credits/Credits';
 
-
 function App() {
   const [isPreLoader, setIsPreLoader] = useState(true);
   useEffect(() => {
@@ -49,15 +48,15 @@ function App() {
               <Route path="causes" element={<CausesHome />} />
               <Route path="eventDetail/:id" element={<EventDetail />} />
 
-              <Route path="adminPanel" element={
-                <AdminHome />
-              } >
+              <Route path="adminPanel" element={<AdminHome />} >
                 <Route path="makeAdmin" element={<MakeAdmin />} />
                 <Route path="addEvent" element={<AddEvent />} />
+                <Route path="addCauses" element={<AddCauses />} />
                 <Route path="participant" element={<ParticipentList />} >
                   <Route path="list/:title" element={<List />} />
                 </Route>
               </Route>
+
 
               <Route path="/contact" element={<Contact></Contact>} />
               <Route path="donation" element={<DonationHome />} />

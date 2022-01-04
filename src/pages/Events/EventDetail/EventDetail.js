@@ -13,10 +13,21 @@ import { Button } from 'react-bootstrap';
 
 const EventDetail = () => {
   const { id } = useParams();
+<<<<<<< HEAD
+=======
+
+>>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const [rating, setRating] = React.useState();
   const [event, setEvent] = useState({});
+<<<<<<< HEAD
+=======
+  const [isJoin, setIsJoin] = useState([]);
+
+
+
+>>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
   const [isJoin, setIsJoin] = useState([]);
 
 
@@ -28,12 +39,18 @@ const EventDetail = () => {
         setEvent(data);
       });
   }, [id]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
 
   //  joining in an events
   const eventTitle = [event.title];
 
   const handleJoining = () => {
+
     fetch(`https://serene-bastion-42312.herokuapp.com/join/${user?.email}`, {
+
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
@@ -63,7 +80,7 @@ const EventDetail = () => {
 
   console.log(isJoin)
 
-  const onSubmit = (data) => {
+  const onSubmit = (e, data) => {
     console.log(data);
     data["rating"] = rating;
     const image = event.image;
@@ -98,6 +115,10 @@ const EventDetail = () => {
                 {isJoin.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
                 {isJoin.length !== 0 && <h3 >You Already joined</h3>}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
 
 
                 <div className="feedback area mt-3">
