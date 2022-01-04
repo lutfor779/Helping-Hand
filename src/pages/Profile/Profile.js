@@ -19,8 +19,9 @@ const Profile = () => {
         <div className='row'>
             <Header />
             <div className="col-md-6">
-                <h1>Name: {profile?.displayName}</h1>
+                <h3>Name: {profile?.displayName}</h3>
                 <p>Role: {profile?.role}</p>
+                <p>Email: {profile?.email}</p>
             </div>
             <div className="col-md-6">
                 <h3>You participate in these events</h3>

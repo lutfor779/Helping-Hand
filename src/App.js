@@ -17,6 +17,8 @@ import AddEvent from './pages/AdminPanel/AddEvent/AddEvent';
 import Contact from './pages/Contact/Contact';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Profile from './pages/Profile/Profile';
+import ParticipentList from './pages/AdminPanel/ParticipantList/ParticipentList';
+import List from './pages/AdminPanel/List/List';
 
 function App() {
   return (
@@ -40,6 +42,9 @@ function App() {
             } >
               <Route path="makeAdmin" element={<MakeAdmin />} />
               <Route path="addEvent" element={<AddEvent />} />
+              <Route path="participant" element={<ParticipentList />} >
+                <Route path="list/:title" element={<List />} />
+              </Route>
             </Route>
 
             <Route path="/contact" element={<Contact></Contact>} />

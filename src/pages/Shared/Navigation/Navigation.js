@@ -14,7 +14,7 @@ const Navigation = () => {
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand >
-                        <img src={logo} height="35"  alt="logo" />
+                        <img src={logo} height="35" alt="logo" />
                     </Navbar.Brand>
                 </LinkContainer>
 
@@ -29,7 +29,7 @@ const Navigation = () => {
                         <LinkContainer to="/donation" >
                             <Nav.Link>Donation</Nav.Link>
                         </LinkContainer>
-                        
+
                         <LinkContainer to="/about">
                             <Nav.Link>About Us</Nav.Link>
                         </LinkContainer>
@@ -51,7 +51,9 @@ const Navigation = () => {
                                 {user.displayName} &nbsp;
                             </Navbar.Text>
                         }
-
+                        {user?.email && <LinkContainer to="/profile">
+                            <Nav.Link>My profile</Nav.Link>
+                        </LinkContainer>}
                         {
                             user.email ?
                                 <Button
