@@ -26,6 +26,10 @@ const Navigation = () => {
                             <Nav.Link>Get Started</Nav.Link>
                         </LinkContainer>
 
+                        <LinkContainer to="/causes" >
+                            <Nav.Link>Causes</Nav.Link>
+                        </LinkContainer>
+
                         <LinkContainer to="/donation" >
                             <Nav.Link>Donation</Nav.Link>
                         </LinkContainer>

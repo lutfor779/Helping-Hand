@@ -33,6 +33,10 @@ const AdminNav = () => {
                             <LinkContainer to="addEvent" >
                                 <Nav.Link>Add Events</Nav.Link>
                             </LinkContainer>
+
+                            <LinkContainer to="addCauses" >
+                                <Nav.Link>Add Causes</Nav.Link>
+                            </LinkContainer>
                            
                             {
                                 user.displayName && <Navbar.Text>
