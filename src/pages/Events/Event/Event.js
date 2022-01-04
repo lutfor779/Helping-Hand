@@ -8,14 +8,14 @@ const Event = ({ event }) => {
     return (
         <Col>
             <Card className="h-100 rounded">
-                <Card.Img variant="top" src={image} height="250" className="rounded-top" />
+                <Card.Img variant="top" src={image} height="200" className="rounded-top" />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
 
                     <Card.Text>Date: {date}</Card.Text>
 
                     <Link to={`/eventDetail/${_id}`}>
-                        <Button variant="success px-5 mt-3" >Detail</Button>
+                        <Button variant="success px-5 " >Detail</Button>
                     </Link>
                 </Card.Body>
             </Card>

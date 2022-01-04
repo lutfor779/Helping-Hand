@@ -22,25 +22,17 @@ const AllEvents = () => {
     }, [setIsLoading]);
 
     return (
-        <div>
-            <Container>
-                <h1 className='text-center my-5'>Upcoming Events</h1>
 
-
-            <Row xs={1} md={2} lg={3} className="g-4 py-5">
-                <h1>Upcoming Events</h1>
-                
-
-                <Row xs={1} md={2} lg={3} className="g-4">
-
-                    {
-                        events.length !== 0 && events.map(event => <Event key={event._id} event={event} />)
-                    }
-                </Row>
+        <Container>
+            <h1 className='text-center text-warning bg-light p-3 rounded'>Upcoming Events</h1>
+            <Row xs={1} md={2} lg={4} className="g-4 pt-5 bg-light p-3">
+                {
+                    events.length !== 0 && events.map(event => <Event key={event._id} event={event} />)
+                }
             </Row>
 
-            </Container>
-        </div>
+        </Container>
+
 
     );
 };
