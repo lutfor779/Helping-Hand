@@ -26,7 +26,7 @@ const EventDetail = () => {
   const { register, handleSubmit, reset } = useForm();
   const [rating, setRating] = React.useState();
 
-  const onSubmit = (e,data) => {
+  const onSubmit = (data) => {
     console.log(data);
     data["rating"] = rating;
     const image = event.image;

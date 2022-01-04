@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 
 const Cause = () => {
-  const data = [{ name: "Raised", uv: 400, pv: 2400, amt: 2400},{ name: "Goal", uv: 300, pv: 200, amt: 100}];
+  const data = [
+    { name: "Raised", uv: 400, pv: 2400, amt: 2400 },
+    { name: "Goal", uv: 300, pv: 200, amt: 100 },
+  ];
   const [causes, setCauses] = useState([]);
   useEffect(() => {
     axios
@@ -15,14 +18,14 @@ const Cause = () => {
   return (
     <div className="py-5">
       <Container>
-        <Row>
+        <Row className="g-3">
           <Col md={8}>
             {causes?.map((cause) => (
-              <Col md={12} key={cause._id}>
-                <div className="d-flex">
-                  <div>
-                    <img src={cause.image} alt="" />
-                  </div>
+              <Row key={cause._id} className="g-3">
+                <Col md={6} lg={4}>
+                  <img className="img-fluid" src={cause.image} alt="" />
+                </Col>
+                <Col md={6} lg={8}>
                   <div className="ms-3">
                     <h5>{cause.title}</h5>
                     <p className="mt-0 mb-0">
@@ -35,12 +38,13 @@ const Cause = () => {
                       </button>
                     </Link>
                   </div>
-                </div>
-              </Col>
+                </Col>
+              </Row>
             ))}
           </Col>
-          <Col md={4}>
-            <BarChart width={500} height={300} data={data}>
+
+          <Col md={4} className="">
+            <BarChart width={300} height={300} data={data}>
               <XAxis dataKey="name" stroke="#eed8d2" />
               <YAxis />
               <Tooltip />
