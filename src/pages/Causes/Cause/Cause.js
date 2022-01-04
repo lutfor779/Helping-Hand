@@ -12,7 +12,7 @@ const Cause = () => {
   const [causes, setCauses] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/causes")
+      .get("https://serene-bastion-42312.herokuapp.com/causes")
       .then((res) => setCauses(res.data));
   }, []);
   return (

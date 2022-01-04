@@ -18,7 +18,7 @@ const AddEvent = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (admin) {
-            fetch(`http://localhost:5000/events`, {
+            fetch(`https://serene-bastion-42312.herokuapp.com/events`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -37,11 +37,10 @@ const AddEvent = () => {
 
 
     return (
-        <Container className='center'>
-            <div>
-                <h1>Add Event</h1>
-
-                <Form onSubmit={handleSubmit}>
+        <Container>
+            <div className='row justify-content-center pt-5'>
+                <Form onSubmit={handleSubmit} style={{ fontFamily: "poppins" }} className='col-md-6 bg-light p-5 w-sm-100 custom-shadow border rounded-3'>
+                    <h2 className='text-center text-danger fw-bold'>Add Event</h2>
                     <Form.Group className="mb-3">
                         <Form.Label>Event Title</Form.Label>
                         <Form.Control
@@ -66,7 +65,7 @@ const AddEvent = () => {
                         <Form.Label>Image Link</Form.Label>
                         <Form.Control
                             type="text"
-                            placeholder="Enter the link of the event"
+                            placeholder="Enter the link of the event lorem simsdflk sdflsdf "
                             name='image'
                             required
                             onBlur={handleOnBlur} />
@@ -92,12 +91,10 @@ const AddEvent = () => {
                             onBlur={handleOnBlur} />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button className='button-color px-5 border-0 text-center' type="submit">
                         Submit
                     </Button>
                 </Form>
-
-
             </div>
         </Container>
     );

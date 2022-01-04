@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import swal from "sweetalert";
 
 const AddCauses = () => {
-    const { user } = useAuth();
+  const { user } = useAuth();
   const {
     register,
     handleSubmit,
@@ -16,8 +16,8 @@ const AddCauses = () => {
   const onSubmit = (data) => {
     data.email = user?.email;
     axios
-      .post("http://localhost:5000/causes", data)
-    .then((res) => {
+      .post("https://serene-bastion-42312.herokuapp.com/causes", data)
+      .then((res) => {
         if (res.data.acknowledged) {
           swal("Good job!", "Causes Added", "success");
         }
@@ -29,46 +29,46 @@ const AddCauses = () => {
     console.log(data);
   };
 
-    return (
-        <Container>
-            <div className='row justify-content-center'>
-                <div className='col-md-6'>
-                <h1>Add Causes</h1>
+  return (
+    <Container>
+      <div className='row justify-content-center mt-5'>
+        <div className='col-md-6 bg-light p-5 w-sm-100  custom-shadow border rounded-3'>
+          <h2 className='text-center text-danger fw-bold'>Add Causes</h2>
 
-                <form onSubmit={handleSubmit(onSubmit)}>
-                <label>Causes Title</label>
-              <input
-                {...register("title")}
-                placeholder="title"
-                className="form-control mb-3"
-              />
-              <label>Causes Date</label>
-              <input
-                {...register("date")}
-                // placeholder="Name"
-                type="date"
-                className="form-control mb-3"
-              />
-              <label>Causes Description</label>
-              <input
-                {...register("description")}
-                placeholder="Description"
-                className="form-control mb-3"
-              />
-              <label>Causes Images</label>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>Causes Title</label>
+            <input
+              {...register("title")}
+              placeholder="title"
+              className="form-control mb-3"
+            />
+            <label>Causes Date</label>
+            <input
+              {...register("date")}
+              // placeholder="Name"
+              type="date"
+              className="form-control mb-3"
+            />
+            <label>Causes Description</label>
+            <input
+              {...register("description")}
+              placeholder="Description"
+              className="form-control mb-3"
+            />
+            <label>Causes Images</label>
 
-              <input
-                {...register("image", { required: true })}
-                placeholder="Image Link"
-                className="form-control mb-3"
-              />
+            <input
+              {...register("image", { required: true })}
+              placeholder="Image Link"
+              className="form-control mb-3"
+            />
 
-              <input type="submit" value="Add Causes" className="btn theme-bg text-white" />
-            </form>
-            </div>
-            </div>
-        </Container>
-    );
+            <input type="submit" value="Add Causes" className="btn theme-bg text-white" />
+          </form>
+        </div>
+      </div>
+    </Container>
+  );
 };
 
 export default AddCauses;

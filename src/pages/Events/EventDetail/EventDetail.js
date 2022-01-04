@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Accordion } from "react-bootstrap";
+import { Accordion, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
@@ -12,11 +12,11 @@ import useAuth from "../../../hooks/useAuth";
 
 const EventDetail = () => {
   const { id } = useParams();
-
+  const [isJoin, setIsJoin] = useState([]);
   const [event, setEvent] = useState({}); //use redux for store data
 
   useEffect(() => {
-    fetch(`http://localhost:5000/events/${id}`)
+    fetch(`https://serene-bastion-42312.herokuapp.com/events/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setEvent(data);
@@ -26,21 +26,47 @@ const EventDetail = () => {
   const { register, handleSubmit, reset } = useForm();
   const [rating, setRating] = React.useState();
 
-
   //  joining in an events
-  const handleJoining = () => {
+  const eventTitle = [event.title];
 
+  const handleJoining = () => {
+    fetch(`https://serene-bastion-42312.herokuapp.com/join/${user?.email}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(eventTitle)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.modifiedCount) {
+          alert('Join  Successfully');
+
+        }
+      })
   }
-  const onSubmit = (e, data) => {
+
+  // checking already joined in this event
+  useEffect(() => {
+    fetch(`https://serene-bastion-42312.herokuapp.com/joinedEvents/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const x = data?.events?.filter(y => y === event?.title)
+        setIsJoin(x)
+      });
+  }, [user?.email, event?.title]);
+
+  console.log(isJoin)
 
   const onSubmit = (data) => {
-
     console.log(data);
     data["rating"] = rating;
     const image = event.image;
     data.image = image;
     axios
-      .post("http://localhost:5000/feedback", data)
+      .post("https://serene-bastion-42312.herokuapp.com/feedback", data)
       .then((res) => {
         if (res.data.acknowledged) {
           swal("Good job!", "Feedback Added", "success");
@@ -65,7 +91,9 @@ const EventDetail = () => {
                 <h1> {event.title}</h1>
                 <img src={event.image} className="img-fluid" alt="" />
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
-                <button onClick={handleJoining}>Join in this event as volunteer</button>
+
+                {isJoin?.length !== 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
+                {isJoin?.length === 0 && <h3 >You Already joined</h3>}
 
 
                 <div className="feedback area mt-3">
