@@ -28,9 +28,13 @@
     "react-scripts": "5.0.0",
     "react-slick": "^0.28.1",
 
+    "recharts": "^2.1.8",
+
+
     "redux": "^4.1.2",
 
     "recharts": "^2.1.8",
+
 
     "slick-carousel": "^1.8.1",
     "stripe": "^8.195.0",

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
 import AdminNav from '../AdminNav/AdminNav';
 
 const AdminHome = () => {
@@ -7,6 +8,7 @@ const AdminHome = () => {
         <div>
             <AdminNav />
             <Outlet />
+            <Footer />
         </div>
     );
 };
