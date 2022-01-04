@@ -10,7 +10,7 @@ const Navigation = () => {
 
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" className='py-3' variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="light" sticky="top" className='py-3' variant="light">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand >

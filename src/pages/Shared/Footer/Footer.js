@@ -33,7 +33,7 @@ const Footer = () => {
                                 <li className="text-start pb-2"><h4>Our Address</h4></li>
                                 <li className="text-start w-75"><p>Would you have any enquiries. Please feel free contact us.</p></li>
                                 <li className="text-start my-1"><IoLocationSharp className="me-1" style={{ color: '#f15b43' }} /> 123 street, California</li>
-                                <li className="text-start my-1"><BsFillTelephoneFill className="me-1" style={{ color: '#f15b43' }} />+88012345678</li>
+                                <li className="text-start my-1"><BsFillTelephoneFill className="me-1" style={{ color: '#f15b43' }} /> +88012345678</li>
                                 <li className="text-start my-1"><MdEmail className="me-1" style={{ color: '#f15b43' }} /> hphand@gmail.com</li>
                             </ul>
                         </div>

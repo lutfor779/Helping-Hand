@@ -38,11 +38,6 @@ const AdminNav = () => {
                                 <Nav.Link>Add Causes</Nav.Link>
                             </LinkContainer>
                            
-
-                            <LinkContainer to="/services">
-                                <Nav.Link>Services</Nav.Link>
-                            </LinkContainer>
-
                             {
                                 user.displayName && <Navbar.Text>
                                     {user.displayName} &nbsp;

@@ -1,0 +1,7 @@
+.banner-donate{
+    background-image: url(../../../images/banner-donate.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+}
