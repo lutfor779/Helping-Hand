@@ -31,8 +31,6 @@ const EventDetail = () => {
   const handleJoining = () => {
 
   }
-  const onSubmit = (e, data) => {
-
   const onSubmit = (data) => {
 
     console.log(data);

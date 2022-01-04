@@ -9,7 +9,6 @@ const Navigation = () => {
 
 
     return (
-
         <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
                 <LinkContainer to="/">
