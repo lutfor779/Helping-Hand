@@ -12,28 +12,15 @@ import useAuth from "../../../hooks/useAuth";
 
 const EventDetail = () => {
   const { id } = useParams();
-<<<<<<< HEAD
-=======
-
->>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const [rating, setRating] = React.useState();
   const [event, setEvent] = useState({});
-<<<<<<< HEAD
-=======
-  const [isJoin, setIsJoin] = useState([]);
-
-<<<<<<< HEAD
-
-
->>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
   const [isJoin, setIsJoin] = useState([]);
 
 
 
-=======
->>>>>>> 4a959d8e6d97a8556c778a7fe758b29fce956ba7
+
   useEffect(() => {
     fetch(`https://serene-bastion-42312.herokuapp.com/events/${id}`)
       .then((res) => res.json())
@@ -41,10 +28,6 @@ const EventDetail = () => {
         setEvent(data);
       });
   }, [id]);
-<<<<<<< HEAD
-=======
-
->>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
 
   //  joining in an events
   const eventTitle = [event.title];
@@ -115,10 +98,6 @@ const EventDetail = () => {
                 {isJoin?.length !== 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
                 {isJoin?.length === 0 && <h3 >You Already joined</h3>}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
 
 
                 <div className="feedback area mt-3">

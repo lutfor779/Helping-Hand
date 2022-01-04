@@ -3,9 +3,9 @@ import { Container, Row } from 'react-bootstrap';
 import Event from '../Event/Event';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../../redux/slices/eventsSlice';
+import useAuth from '../../../hooks/useAuth';
 
 const AllEvents = () => {
-<<<<<<< HEAD
 
 
     const { setIsLoading } = useAuth();
@@ -14,34 +14,15 @@ const AllEvents = () => {
     // here we will use redux 
 
 
-    const { setIsLoading } = useAuth();
 
-
-
-
-=======
->>>>>>> 4a959d8e6d97a8556c778a7fe758b29fce956ba7
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchEvents());
     }, [dispatch]);
 
     const allEvents = useSelector((state) => state.events.services)
-<<<<<<< HEAD
     console.log()
 
-
-
-
-
-    const allEvents = useSelector((state) => state.events.services)
-    console.log()
-
-
-
-    const allEvents = useSelector((state) => state.events.services)
-=======
->>>>>>> 4a959d8e6d97a8556c778a7fe758b29fce956ba7
 
     return (
         <Container>
@@ -51,11 +32,7 @@ const AllEvents = () => {
                     allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
                 }
             </Row>
-            <Row>
-                {
-                    allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
-                }
-            </Row>
+
 
         </Container>
 

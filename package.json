@@ -27,10 +27,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-slick": "^0.28.1",
-<<<<<<< HEAD
-=======
     "recharts": "^2.1.8",
->>>>>>> 0022485914730076fabe0bf2c80c2411247cab3d
     "redux": "^4.1.2",
     "slick-carousel": "^1.8.1",
     "stripe": "^8.195.0",
