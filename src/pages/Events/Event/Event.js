@@ -15,8 +15,11 @@ const Event = ({ event }) => {
                     <Card.Text>Date: {date}</Card.Text>
 
                     <Link to={`/eventDetail/${_id}`}>
-                        <Button variant="success px-5 mt-3" >Detail</Button>
+                        <Button variant="success " >Detail</Button>
                     </Link>
+
+
+
                 </Card.Body>
             </Card>
         </Col>
