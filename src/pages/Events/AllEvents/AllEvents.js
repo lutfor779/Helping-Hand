@@ -13,20 +13,20 @@ const AllEvents = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchEvents());
-    }, []);
-    const books = useSelector((state) => state.events.services)
-    console.log(books)
+    }, [dispatch]);
+    const allEvents = useSelector((state) => state.events.services)
+    console.log(events)
 
 
-    useEffect(() => {
-        setIsLoading(true);
-        fetch(`http://localhost:5000/events`)
-            .then(res => res.json())
-            .then(data => {
-                setEvents(data);
-                setIsLoading(false);
-            });
-    }, [setIsLoading]);
+    // useEffect(() => {
+    //     setIsLoading(true);
+    //     fetch(`http://localhost:5000/events`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setEvents(data);
+    //             setIsLoading(false);
+    //         });
+    // }, [setIsLoading]);
 
 
     return (
@@ -37,7 +37,7 @@ const AllEvents = () => {
                 <Row xs={1} md={2} lg={3} className="g-4">
 
                     {
-                        events.length !== 0 && events.map(event => <Event key={event._id} event={event} />)
+                        allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
                     }
                 </Row>
 
