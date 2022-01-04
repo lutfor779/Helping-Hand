@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Accordion } from "react-bootstrap";
+import { Accordion, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
@@ -13,6 +13,7 @@ import { Button } from 'react-bootstrap';
 
 const EventDetail = () => {
   const { id } = useParams();
+
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const [rating, setRating] = React.useState();
@@ -21,8 +22,11 @@ const EventDetail = () => {
 
 
 
+  const [isJoin, setIsJoin] = useState([]);
+  const [event, setEvent] = useState({}); //use redux for store data
+
   useEffect(() => {
-    fetch(`http://localhost:5000/events/${id}`)
+    fetch(`https://serene-bastion-42312.herokuapp.com/events/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setEvent(data);
@@ -34,7 +38,9 @@ const EventDetail = () => {
   const eventTitle = [event.title];
 
   const handleJoining = () => {
-    fetch(`http://localhost:5000/join/${user?.email}`, {
+
+    fetch(`https://serene-bastion-42312.herokuapp.com/join/${user?.email}`, {
+
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
@@ -53,7 +59,7 @@ const EventDetail = () => {
 
   // checking already joined in this event
   useEffect(() => {
-    fetch(`http://localhost:5000/joinedEvents/${user?.email}`)
+    fetch(`https://serene-bastion-42312.herokuapp.com/joinedEvents/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -70,7 +76,7 @@ const EventDetail = () => {
     const image = event.image;
     data.image = image;
     axios
-      .post("http://localhost:5000/feedback", data)
+      .post("https://serene-bastion-42312.herokuapp.com/feedback", data)
       .then((res) => {
         if (res.data.acknowledged) {
           swal("Good job!", "Feedback Added", "success");
@@ -81,7 +87,7 @@ const EventDetail = () => {
         swal("Something went wrong!", `${error.message}`, "error");
       });
   };
-  console.log(event);
+  // console.log(event);
 
   return (
     <>
@@ -98,6 +104,7 @@ const EventDetail = () => {
 
                 {isJoin.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
                 {isJoin.length !== 0 && <h3 >You Already joined</h3>}
+
 
 
 

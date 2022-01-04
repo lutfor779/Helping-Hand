@@ -3,14 +3,12 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/logo1.png';
-import './Navigation.css'
 
 const Navigation = () => {
     const { user, admin, logOut } = useAuth();
 
-
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" className='py-3' variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand >
@@ -22,8 +20,16 @@ const Navigation = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="mx-auto">
+                        <LinkContainer to="/home" >
+                            <Nav.Link>Home</Nav.Link>
+                        </LinkContainer>
+
                         <LinkContainer to="/getStarted" >
                             <Nav.Link>Get Started</Nav.Link>
+                        </LinkContainer>
+
+                        <LinkContainer to="/causes" >
+                            <Nav.Link>Causes</Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to="/donation" >
@@ -41,13 +47,13 @@ const Navigation = () => {
 
                     <Nav>
                         {
-                            admin && <LinkContainer to="/adminPanel">
+                            admin && <LinkContainer to="/adminPanel/projectMembers">
                                 <Nav.Link>Admin Panel</Nav.Link>
                             </LinkContainer>
                         }
 
                         {
-                            user.displayName && <Navbar.Text>
+                            user.displayName && !admin && <Navbar.Text>
                                 {user.displayName} &nbsp;
                             </Navbar.Text>
                         }
@@ -61,7 +67,7 @@ const Navigation = () => {
                                     onClick={logOut}>Logout</Button>
                                 :
                                 <LinkContainer to="/login">
-                                    <Nav.Link>Login</Nav.Link>
+                                    <Nav.Link><p className='button-color border-0'>Login</p></Nav.Link>
                                 </LinkContainer>
                         }
                     </Nav>

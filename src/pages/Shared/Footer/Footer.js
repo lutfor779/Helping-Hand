@@ -33,7 +33,7 @@ const Footer = () => {
                                 <li className="text-start pb-2"><h4>Our Address</h4></li>
                                 <li className="text-start w-75"><p>Would you have any enquiries. Please feel free contact us.</p></li>
                                 <li className="text-start my-1"><IoLocationSharp className="me-1" style={{ color: '#f15b43' }} /> 123 street, California</li>
-                                <li className="text-start my-1"><BsFillTelephoneFill className="me-1" style={{ color: '#f15b43' }} />+88012345678</li>
+                                <li className="text-start my-1"><BsFillTelephoneFill className="me-1" style={{ color: '#f15b43' }} /> +88012345678</li>
                                 <li className="text-start my-1"><MdEmail className="me-1" style={{ color: '#f15b43' }} /> hphand@gmail.com</li>
                             </ul>
                         </div>
@@ -42,12 +42,12 @@ const Footer = () => {
                                 <li className="text-start mb-1 pb-2"><h4>Newsletter</h4></li>
                                 <li className="text-start mt-1 mb-2">You will be notified when something new will be appear.</li>
                                 <li className="text-start mt-1">
-                                    <button className='btn btn-danger rounded-pill px-3 button-color my-4'>DONATE NOW</button>
+                                    <button to="/donation" className='btn btn-danger rounded-pill px-3 button-color my-4'>DONATE NOW</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <p className="mt-5 mb-0 text-center">Copyright ©helping-hand-2021</p>
+                    <p className="mt-5 mb-0 text-center">Copyright ©helping-hand-2021 ||</p>
                 </div>
             </div>
         </div>
