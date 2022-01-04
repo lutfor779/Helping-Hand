@@ -38,67 +38,62 @@ const AddEvent = () => {
 
     return (
         <Container className='center'>
-            <div>
-                <h1>Add Event</h1>
+            <Form onSubmit={handleSubmit} style={{ fontFamily: "poppins" }} className='bg-light p-5 w-sm-100 custom-shadow border rounded-3'>
+                <h2 className='text-center theme-color'>Add Event</h2>
+                <Form.Group className="mb-3">
+                    <Form.Label>Event Title</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Helping people"
+                        name="title"
+                        required
+                        onBlur={handleOnBlur} />
+                </Form.Group>
 
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3">
-                        <Form.Label>Event Title</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Helping people"
-                            name="title"
-                            required
-                            onBlur={handleOnBlur} />
-                    </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Details of the event"
+                        name="description"
+                        required
+                        onBlur={handleOnBlur} />
+                </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Details of the event"
-                            name="description"
-                            required
-                            onBlur={handleOnBlur} />
-                    </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Image Link</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Enter the link of the event lorem simsdflk sdflsdf "
+                        name='image'
+                        required
+                        onBlur={handleOnBlur} />
+                </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Image Link</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Enter the link of the event"
-                            name='image'
-                            required
-                            onBlur={handleOnBlur} />
-                    </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Start Date</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="dd-mm-yy"
+                        name="date"
+                        required
+                        onBlur={handleOnBlur} />
+                </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Start Date</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="dd-mm-yy"
-                            name="date"
-                            required
-                            onBlur={handleOnBlur} />
-                    </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Event Location</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Address"
+                        name="place"
+                        required
+                        onBlur={handleOnBlur} />
+                </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Event Location</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Address"
-                            name="place"
-                            required
-                            onBlur={handleOnBlur} />
-                    </Form.Group>
-
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
-
-
-            </div>
+                <Button className='button-color px-5 border-0 text-center' type="submit">
+                    Submit
+                </Button>
+            </Form>
         </Container>
     );
 };

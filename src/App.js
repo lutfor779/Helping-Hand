@@ -37,7 +37,6 @@ function App() {
             <Route path="causes" element={<CausesHome />} />
             <Route path="eventDetail/:id" element={<EventDetail />} />
 
-
             <Route path="adminPanel" element={
               <AdminHome />
             } >
