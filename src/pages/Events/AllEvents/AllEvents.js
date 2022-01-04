@@ -5,24 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../../redux/slices/eventsSlice';
 
 const AllEvents = () => {
-
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchEvents());
     }, [dispatch]);
+
     const allEvents = useSelector((state) => state.events.services)
-
-
-
-    // useEffect(() => {
-    //     setIsLoading(true);
-    //     fetch(`http://localhost:5000/events`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setEvents(data);
-    //             setIsLoading(false);
-    //         });
-    // }, [setIsLoading]);
 
     return (
 

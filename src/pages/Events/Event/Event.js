@@ -11,18 +11,14 @@ const Event = ({ event }) => {
                 <Card.Img variant="top" src={image} height="200" className="rounded-top" />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
-
                     <Card.Text>Date: {date}</Card.Text>
-
-                    <Link to={`/eventDetail/${_id}`}>
-
-                        <Button variant="success px-5 " >Detail</Button>
-
-                    </Link>
-
-
-
                 </Card.Body>
+
+                <Card.Footer>
+                    <Link to={`/eventDetail/${_id}`}>
+                        <Button variant="success px-5 " >Detail</Button>
+                    </Link>
+                </Card.Footer>
             </Card>
         </Col>
     );

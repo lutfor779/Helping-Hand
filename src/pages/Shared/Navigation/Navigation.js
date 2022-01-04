@@ -47,13 +47,13 @@ const Navigation = () => {
 
                     <Nav>
                         {
-                            admin && <LinkContainer to="/adminPanel">
+                            admin && <LinkContainer to="/adminPanel/projectMembers">
                                 <Nav.Link>Admin Panel</Nav.Link>
                             </LinkContainer>
                         }
 
                         {
-                            user.displayName && <Navbar.Text>
+                            user.displayName && !admin && <Navbar.Text>
                                 {user.displayName} &nbsp;
                             </Navbar.Text>
                         }

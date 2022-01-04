@@ -30,7 +30,7 @@ const User = ({ user, mail }) => {
     // console.log(currentRole);
 
     return (
-        <Row className="bg-light p-3 pe-lg-5 rounded-3" style={{fontFamily: "poppins", fontWeight: "300"}}>
+        <Row className="bg-light p-3 pe-lg-5 rounded-3" style={{ fontFamily: "poppins", fontWeight: "300" }}>
             <Col sm={12} md={7} lg={7}>{email}</Col>
             <Col sm={8} md={3} lg={4}>Role: {currentRole}</Col>
             <Col sm={4} md={2} lg={1}>

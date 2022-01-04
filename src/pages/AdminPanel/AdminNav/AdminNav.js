@@ -10,60 +10,12 @@ const AdminNav = () => {
 
 
     return (
-            <Navbar bg="primary" variant="dark" className='navbar' className="py-3" expand={false}>
-                <Container>
-                    <LinkContainer to="/">
-                        <Navbar.Brand >
-                            <img src={logo} height="35" alt="Logo" />
-                            </Navbar.Brand>
-                    </LinkContainer>
-
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" />
-                    <Navbar.Offcanvas
-                        id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel"
-                        placement="end"
-                    >
-                        <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id="offcanvasNavbarLabel">Admin Panel</Offcanvas.Title>
-                        </Offcanvas.Header>
-
-                        <Offcanvas.Body>
-                            <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <LinkContainer to="makeAdmin" >
-                                    <Nav.Link>Make Admin</Nav.Link>
-                                </LinkContainer>
-
-                                <LinkContainer to="addEvent" >
-                                    <Nav.Link>Add Events</Nav.Link>
-                                </LinkContainer>
-
-                                {
-                                    user.displayName && <Navbar.Text>
-                                        {user.displayName} &nbsp;
-                                    </Navbar.Text>
-                                }
-                                {
-                                    user.email ?
-                                        <Button
-                                            variant='danger'
-                                            onClick={logOut}>Logout</Button>
-                                        :
-                                        <LinkContainer to="/login">
-                                            <Button>Login</Button>
-                                        </LinkContainer>
-                                }
-
-                            </Nav>
-
-                        </Offcanvas.Body>
-                    </Navbar.Offcanvas>
-                </Container>
-            </Navbar>
-        <Navbar bg="primary" variant="dark" expand={false}>
-            <Container fluid>
+        <Navbar bg="primary" variant="dark" className='navbar' expand={false}>
+            <Container>
                 <LinkContainer to="/">
-                    <Navbar.Brand >Helping Hand</Navbar.Brand>
+                    <Navbar.Brand >
+                        <img src={logo} height="35" alt="Logo" />
+                    </Navbar.Brand>
                 </LinkContainer>
 
                 <Navbar.Toggle aria-controls="offcanvasNavbar" />
@@ -73,11 +25,17 @@ const AdminNav = () => {
                     placement="end"
                 >
                     <Offcanvas.Header closeButton>
-                        <Offcanvas.Title id="offcanvasNavbarLabel">Admin Panel</Offcanvas.Title>
+                        <LinkContainer to="/adminPanel/projectMembers" >
+                            <Offcanvas.Title id="offcanvasNavbarLabel" className='text-danger fs-3 fw-bold' as={Navbar.Brand}>Admin Panel</Offcanvas.Title>
+                        </LinkContainer>
                     </Offcanvas.Header>
 
                     <Offcanvas.Body>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
+                            <LinkContainer to="projectMembers" >
+                                <Nav.Link>Project Members</Nav.Link>
+                            </LinkContainer>
+
                             <LinkContainer to="makeAdmin" >
                                 <Nav.Link>Make Admin</Nav.Link>
                             </LinkContainer>
@@ -89,7 +47,7 @@ const AdminNav = () => {
                             <LinkContainer to="addCauses" >
                                 <Nav.Link>Add Causes</Nav.Link>
                             </LinkContainer>
-                           
+
                             {
                                 user.displayName && <Navbar.Text>
                                     {user.displayName} &nbsp;
@@ -112,7 +70,6 @@ const AdminNav = () => {
                 </Navbar.Offcanvas>
             </Container>
         </Navbar>
-
     );
 };
 

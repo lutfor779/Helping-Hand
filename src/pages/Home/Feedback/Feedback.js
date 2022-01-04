@@ -10,7 +10,7 @@ const Feedback = () => {
   const [feedback, setFeedback] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/feedback")
+      .get("https://serene-bastion-42312.herokuapp.com/feedback")
       .then((res) => setFeedback(res.data));
   }, []);
   var settings = {
