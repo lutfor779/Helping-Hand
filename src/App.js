@@ -30,7 +30,6 @@ function App() {
             <Route path="getStarted" element={<EventsHome />} />
             <Route path="eventDetail/:id" element={<EventDetail />} />
 
-
             <Route path="adminPanel" element={
               <AdminHome />
             } >
