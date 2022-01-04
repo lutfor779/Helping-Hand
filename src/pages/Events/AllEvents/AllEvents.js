@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchEvents } from '../../../redux/slices/eventsSlice';
 
 const AllEvents = () => {
+<<<<<<< HEAD
 
 
     const { setIsLoading } = useAuth();
@@ -18,12 +19,15 @@ const AllEvents = () => {
 
 
 
+=======
+>>>>>>> 4a959d8e6d97a8556c778a7fe758b29fce956ba7
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchEvents());
     }, [dispatch]);
 
     const allEvents = useSelector((state) => state.events.services)
+<<<<<<< HEAD
     console.log()
 
 
@@ -36,9 +40,10 @@ const AllEvents = () => {
 
 
     const allEvents = useSelector((state) => state.events.services)
+=======
+>>>>>>> 4a959d8e6d97a8556c778a7fe758b29fce956ba7
 
     return (
-
         <Container>
             <h1 className='text-center text-warning bg-light p-3 rounded'>Upcoming Events</h1>
             <Row xs={1} md={2} lg={4} className="g-4 pt-5 bg-light p-3">

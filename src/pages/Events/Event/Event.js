@@ -16,9 +16,9 @@ const Event = ({ event }) => {
 
                 <Card.Footer>
                     <Link to={`/eventDetail/${_id}`}>
-
                         <Button variant="success " >Detail</Button>
                     </Link>
+<<<<<<< HEAD
 
 
 
@@ -32,6 +32,9 @@ const Event = ({ event }) => {
                     <Button variant="success " >Detail</Button>
                 </Link>
 
+=======
+                </Card.Footer>
+>>>>>>> 4a959d8e6d97a8556c778a7fe758b29fce956ba7
             </Card>
         </Col>
     );

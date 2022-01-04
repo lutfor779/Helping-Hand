@@ -9,7 +9,6 @@ import Rating from "react-rating";
 import swal from "sweetalert";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
-import { Button } from 'react-bootstrap';
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -25,6 +24,7 @@ const EventDetail = () => {
 =======
   const [isJoin, setIsJoin] = useState([]);
 
+<<<<<<< HEAD
 
 
 >>>>>>> fad84ac70ee75d31072191a8904d487b62a0b917
@@ -32,6 +32,8 @@ const EventDetail = () => {
 
 
 
+=======
+>>>>>>> 4a959d8e6d97a8556c778a7fe758b29fce956ba7
   useEffect(() => {
     fetch(`https://serene-bastion-42312.herokuapp.com/events/${id}`)
       .then((res) => res.json())
@@ -72,13 +74,11 @@ const EventDetail = () => {
     fetch(`https://serene-bastion-42312.herokuapp.com/joinedEvents/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         const x = data?.events?.filter(y => y === event?.title)
         setIsJoin(x)
       });
   }, [user?.email, event?.title]);
 
-  console.log(isJoin)
 
   const onSubmit = (e, data) => {
     console.log(data);
@@ -112,8 +112,8 @@ const EventDetail = () => {
                 <img src={event.image} className="img-fluid" alt="" />
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
 
-                {isJoin.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
-                {isJoin.length !== 0 && <h3 >You Already joined</h3>}
+                {isJoin?.length !== 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
+                {isJoin?.length === 0 && <h3 >You Already joined</h3>}
 
 <<<<<<< HEAD
 =======
