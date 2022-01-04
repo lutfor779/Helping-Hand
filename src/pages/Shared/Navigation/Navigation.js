@@ -7,13 +7,12 @@ import logo from '../../../images/logo1.png';
 const Navigation = () => {
     const { user, admin, logOut } = useAuth();
 
-
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" sticky="top" className='py-3' variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand >
-                        <img src={logo} height="35"  alt="logo" />
+                        <img src={logo} height="35" alt="logo" />
                     </Navbar.Brand>
                 </LinkContainer>
 
@@ -21,14 +20,22 @@ const Navigation = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="mx-auto">
+                        <LinkContainer to="/home" >
+                            <Nav.Link>Home</Nav.Link>
+                        </LinkContainer>
+
                         <LinkContainer to="/getStarted" >
                             <Nav.Link>Get Started</Nav.Link>
+                        </LinkContainer>
+
+                        <LinkContainer to="/causes" >
+                            <Nav.Link>Causes</Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to="/donation" >
                             <Nav.Link>Donation</Nav.Link>
                         </LinkContainer>
-                        
+
                         <LinkContainer to="/about">
                             <Nav.Link>About Us</Nav.Link>
                         </LinkContainer>
@@ -40,17 +47,19 @@ const Navigation = () => {
 
                     <Nav>
                         {
-                            admin && <LinkContainer to="/adminPanel">
+                            admin && <LinkContainer to="/adminPanel/projectMembers">
                                 <Nav.Link>Admin Panel</Nav.Link>
                             </LinkContainer>
                         }
 
                         {
-                            user.displayName && <Navbar.Text>
+                            user.displayName && !admin && <Navbar.Text>
                                 {user.displayName} &nbsp;
                             </Navbar.Text>
                         }
-
+                        {user?.email && <LinkContainer to="/profile">
+                            <Nav.Link>My profile</Nav.Link>
+                        </LinkContainer>}
                         {
                             user.email ?
                                 <Button

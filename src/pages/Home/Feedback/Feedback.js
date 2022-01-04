@@ -10,7 +10,7 @@ const Feedback = () => {
   const [feedback, setFeedback] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/feedback")
+      .get("https://serene-bastion-42312.herokuapp.com/feedback")
       .then((res) => setFeedback(res.data));
   }, []);
   var settings = {
@@ -22,7 +22,7 @@ const Feedback = () => {
     autoplay: true,
   };
 
-  console.log(feedback);
+  // console.log(feedback);
   return (
     <div className="client-review py-5 text-center">
       <div className="container">
