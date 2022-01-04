@@ -16,6 +16,7 @@ import MakeAdmin from './pages/AdminPanel/MakeAdmin/MakeAdmin';
 import AddEvent from './pages/AdminPanel/AddEvent/AddEvent';
 import Contact from './pages/Contact/Contact';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
 
             <Route path="getStarted" element={<EventsHome />} />
             <Route path="eventDetail/:id" element={<EventDetail />} />
+            <Route path="profile" element={<Profile />} />
 
 
             <Route path="adminPanel" element={

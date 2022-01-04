@@ -9,11 +9,17 @@ import Rating from "react-rating";
 import swal from "sweetalert";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import { Button } from 'react-bootstrap';
 
 const EventDetail = () => {
   const { id } = useParams();
+  const { user } = useAuth();
+  const { register, handleSubmit, reset } = useForm();
+  const [rating, setRating] = React.useState();
+  const [event, setEvent] = useState({});
+  const [isJoin, setIsJoin] = useState([]);
 
-  const [event, setEvent] = useState({}); //use redux for store data
+
 
   useEffect(() => {
     fetch(`http://localhost:5000/events/${id}`)
@@ -22,15 +28,42 @@ const EventDetail = () => {
         setEvent(data);
       });
   }, [id]);
-  const { user } = useAuth();
-  const { register, handleSubmit, reset } = useForm();
-  const [rating, setRating] = React.useState();
 
 
   //  joining in an events
-  const handleJoining = () => {
+  const eventTitle = [event.title];
 
+  const handleJoining = () => {
+    fetch(`http://localhost:5000/join/${user?.email}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(eventTitle)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.modifiedCount) {
+          alert('Join  Successfully');
+
+        }
+      })
   }
+
+  // checking already joined in this event
+  useEffect(() => {
+    fetch(`http://localhost:5000/joinedEvents/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const x = data?.events?.filter(y => y === event?.title)
+        setIsJoin(x)
+      });
+  }, [user?.email, event?.title]);
+
+  console.log(isJoin)
+
   const onSubmit = (e, data) => {
     console.log(data);
     data["rating"] = rating;
@@ -62,7 +95,10 @@ const EventDetail = () => {
                 <h1> {event.title}</h1>
                 <img src={event.image} className="img-fluid" alt="" />
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
-                <button onClick={handleJoining}>Join in this event as volunteer</button>
+
+                {isJoin.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
+                {isJoin.length !== 0 && <h3 >You Already joined</h3>}
+
 
 
                 <div className="feedback area mt-3">

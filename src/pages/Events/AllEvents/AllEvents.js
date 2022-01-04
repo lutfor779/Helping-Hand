@@ -7,26 +7,18 @@ import { fetchEvents } from '../../../redux/slices/eventsSlice';
 
 const AllEvents = () => {
     const { setIsLoading } = useAuth();
-    const [events, setEvents] = useState([]);
 
-    // here we will use redux replace of useState
+
+    // here we will use redux 
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchEvents());
     }, [dispatch]);
     const allEvents = useSelector((state) => state.events.services)
-    console.log(events)
+    console.log()
 
 
-    // useEffect(() => {
-    //     setIsLoading(true);
-    //     fetch(`http://localhost:5000/events`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setEvents(data);
-    //             setIsLoading(false);
-    //         });
-    // }, [setIsLoading]);
+
 
 
     return (
