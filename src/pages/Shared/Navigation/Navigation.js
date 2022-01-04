@@ -10,11 +10,11 @@ const Navigation = () => {
 
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" sticky="top" className='py-3' variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand >
-                        <img src={logo} height="35"  alt="logo" />
+                        <img src={logo} height="35" alt="logo" />
                     </Navbar.Brand>
                 </LinkContainer>
 
@@ -22,6 +22,10 @@ const Navigation = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="mx-auto">
+                        <LinkContainer to="/home" >
+                            <Nav.Link>Home</Nav.Link>
+                        </LinkContainer>
+
                         <LinkContainer to="/getStarted" >
                             <Nav.Link>Get Started</Nav.Link>
                         </LinkContainer>
@@ -33,7 +37,7 @@ const Navigation = () => {
                         <LinkContainer to="/donation" >
                             <Nav.Link>Donation</Nav.Link>
                         </LinkContainer>
-                        
+
                         <LinkContainer to="/about">
                             <Nav.Link>About Us</Nav.Link>
                         </LinkContainer>
