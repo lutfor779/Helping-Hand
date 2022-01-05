@@ -7,24 +7,24 @@ import './AboutUs.css';
 
 const AboutUs = () => {
   return (
-    <div>
+    <div >
       {/* section title end */}
       <section className="aboutus-area pt-5">
         <div className="container">
           <div className="row mb-5">
             <div className="col-md-6">
               <div className="aboutus-left ">
-                  <div className="image-one">
-                      <img className="img-fluid" src={left1} alt="" />
-                  </div>
-                  <div className="image-two">
-                      <img className="img-fluid" src={left2} alt="" />
-                  </div>
+                <div className="image-one">
+                  <img className="img-fluid" src={left1} alt="" />
+                </div>
+                <div className="image-two">
+                  <img className="img-fluid" src={left2} alt="" />
+                </div>
               </div>
             </div>
             <div className="col-md-6">
               <div className="aboutus-right ">
-                <h6 className="theme-color">
+                <h6 className="text-color">
                   {" "}
                   <BsPlusSquareFill /> ABOUT OUR SERVICES
                 </h6>
@@ -41,30 +41,30 @@ const AboutUs = () => {
                   <div className="w-50">
                     <p className="theme-bg text-white p-3 rounded">There are many variation in donation service, But we provide  a variety of service that you should choose and donate .</p>
                     <div className="news-editor d-flex align-items-center mt-3">
-                    <img
-                      src={editor}
-                      style={{ width: "60px", height: "60px" }}
-                      alt=""
-                    />
-                    <h6 className="ms-2">CEO, Founder</h6>
-                  </div>
+                      <img
+                        src={editor}
+                        style={{ width: "60px", height: "60px" }}
+                        alt=""
+                      />
+                      <h6 className="ms-2">CEO, Founder</h6>
+                    </div>
                   </div>
                   <div className="">
                     <ul className="list-group border-0">
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Food Donation
+                        <BsCoin className="text-color me-3" /> Food Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Money Donation
+                        <BsCoin className="text-color me-3" /> Money Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Dress Donation
+                        <BsCoin className="text-color me-3" /> Dress Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Water Donation
+                        <BsCoin className="text-color me-3" /> Water Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Dress Donation
+                        <BsCoin className="text-color me-3" /> Dress Donation
                       </li>
                     </ul>
                   </div>
@@ -73,7 +73,7 @@ const AboutUs = () => {
                   <div
                     className="progress-bar theme-bg"
                     role="progressbar"
-                    style={{width: '70%'}}
+                    style={{ width: '70%' }}
                     aria-valuenow="70"
                     aria-valuemin="0"
                     aria-valuemax="100"
@@ -82,8 +82,8 @@ const AboutUs = () => {
                   </div>
                 </div>
                 <div className="d-flex justify-content-between mt-3">
-                    <h6>Total Donators</h6>
-                    <h6>Grow is Matter</h6>
+                  <h6>Total Donators</h6>
+                  <h6>Grow is Matter</h6>
                 </div>
               </div>
             </div>

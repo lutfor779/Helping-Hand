@@ -28,7 +28,7 @@ const Contact = () => {
     return (
         <>
             <Header></Header>
-            <div className="section-header mb-5">
+            <div className="section-header">
                 <div className="container">
                     <div className="row text-center py-5">
                         <div className="col text-center">
@@ -38,7 +38,7 @@ const Contact = () => {
                 </div>
             </div>
             {/* section title end */}
-            <section className="contact-area py-5">
+            <section className="contact-area py-5 bg-light">
                 <div className="container">
                     <div className="row text-center mb-5">
                         <div className="col-sm-6 col-md-3">
@@ -72,9 +72,9 @@ const Contact = () => {
                     </div>
                     {/* contact icon end */}
                     <div className=" text-center text-uppercase py-3 mb-3">
-                        <h2>Get <span className="theme-color">in touch</span></h2>
+                        <h2>Get <span className="text-color">in touch</span></h2>
                     </div>
-                    <div className="row">
+                    <div className="row bg-light p-4">
                         <div className="col-lg-12">
                             <div className="contact">
                                 <form ref={form} onSubmit={sendEmail}>

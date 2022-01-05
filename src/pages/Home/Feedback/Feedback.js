@@ -20,6 +20,33 @@ const Feedback = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+
   };
 
   // console.log(feedback);
@@ -38,12 +65,12 @@ const Feedback = () => {
           <div className="col-md-12 mb-5 h-100">
             <Slider {...settings}>
               {feedback?.map((pd) => (
-                <div key={pd._id} className="text-area bg-light mx-5 py-5 custom-shadow" height="100px">
+                <div key={pd._id} className="text-area bg-light custom-shadow" height="100px">
                   <h5>{pd.name}</h5>
                   <p className="px-4">{pd.feedback.slice(0, 170)}</p>
                   <p>
                     <Rating
-                      className="theme-color"
+                      className="text-color"
                       initialRating={pd.rating}
                       emptySymbol={<FaRegStar />}
                       fullSymbol={<FaStar />}

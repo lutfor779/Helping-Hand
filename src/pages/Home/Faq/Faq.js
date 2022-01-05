@@ -5,19 +5,19 @@ const Faq = () => {
     return (
         <div className="faq-area py-5">
             <Container>
-                <Row>
-                    <Col>
+                <Row className="g-3">
+                    <Col sm={12} md={6} lg={5}>
                         <div className="faq-left">
-                            <h6 className="theme-color">FAQ</h6>
+                            <h6 className="text-color">FAQ</h6>
                             <h3>Frequently Asked Questions</h3>
                             <p>Helping Hands is not a chain or a franchise, we’re a small family caring for you and your family. We don’t handle big contracts or focus on volume business. Instead we provide the very best care, tailored to individual cases.</p>
                         </div>
                     </Col>
-                    <Col>
+                    <Col sm={12} md={6} lg={7}>
                         <div className="faq-right">
                             <Accordion defaultActiveKey="0">
                                 <Accordion.Item eventKey="0">
-                                    <Accordion.Header className="theme-color">
+                                    <Accordion.Header className="text-color">
                                         Who We are
                                     </Accordion.Header>
                                     <Accordion.Body>
@@ -25,7 +25,7 @@ const Faq = () => {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1">
-                                    <Accordion.Header className="theme-color">
+                                    <Accordion.Header className="text-color">
                                         Our Mission
                                     </Accordion.Header>
                                     <Accordion.Body>
@@ -33,7 +33,7 @@ const Faq = () => {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2">
-                                    <Accordion.Header className="theme-color">
+                                    <Accordion.Header className="text-color">
                                         Our Vision
                                     </Accordion.Header>
                                     <Accordion.Body>
@@ -41,7 +41,7 @@ const Faq = () => {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3">
-                                    <Accordion.Header className="theme-color">
+                                    <Accordion.Header className="text-color">
                                         Adult care services from Helping Hands
                                     </Accordion.Header>
                                     <Accordion.Body>

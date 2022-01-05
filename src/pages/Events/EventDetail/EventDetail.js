@@ -12,8 +12,12 @@ import useAuth from "../../../hooks/useAuth";
 
 const EventDetail = () => {
   const { id } = useParams();
+  const { user } = useAuth();
+  const { register, handleSubmit, reset } = useForm();
+  const [rating, setRating] = React.useState();
+  const [event, setEvent] = useState({});
   const [isJoin, setIsJoin] = useState([]);
-  const [event, setEvent] = useState({}); //use redux for store data
+  const [clicked, setClicked] = useState(false)
 
   useEffect(() => {
     fetch(`https://serene-bastion-42312.herokuapp.com/events/${id}`)
@@ -22,15 +26,14 @@ const EventDetail = () => {
         setEvent(data);
       });
   }, [id]);
-  const { user } = useAuth();
-  const { register, handleSubmit, reset } = useForm();
-  const [rating, setRating] = React.useState();
 
   //  joining in an events
   const eventTitle = [event.title];
 
   const handleJoining = () => {
+
     fetch(`https://serene-bastion-42312.herokuapp.com/join/${user?.email}`, {
+
       method: 'PUT',
       headers: {
         'content-type': 'application/json'
@@ -42,6 +45,7 @@ const EventDetail = () => {
         console.log(data)
         if (data.modifiedCount) {
           alert('Join  Successfully');
+          setClicked(!clicked)
 
         }
       })
@@ -52,15 +56,15 @@ const EventDetail = () => {
     fetch(`https://serene-bastion-42312.herokuapp.com/joinedEvents/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         const x = data?.events?.filter(y => y === event?.title)
         setIsJoin(x)
+        console.log(data)
+        console.log(x)
       });
-  }, [user?.email, event?.title]);
+  }, [user?.email, event?.title, clicked]);
 
-  console.log(isJoin)
 
-  const onSubmit = (data) => {
+  const onSubmit = (e, data) => {
     console.log(data);
     data["rating"] = rating;
     const image = event.image;
@@ -90,16 +94,17 @@ const EventDetail = () => {
                 {/* <h5>Event Detail of {id}</h1> */}
                 <h1> {event.title}</h1>
                 <img src={event.image} className="img-fluid" alt="" />
+                <p>{event?.description}</p>
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
 
-                {isJoin?.length !== 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
-                {isJoin?.length === 0 && <h3 >You Already joined</h3>}
+                {isJoin?.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
+                {isJoin?.length !== 0 && <h3 >You Already joined as a volunteer</h3>}
 
 
                 <div className="feedback area mt-3">
                   <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
-                      <Accordion.Header className="theme-color">Give a Feedback</Accordion.Header>
+                      <Accordion.Header className="text-color">Give a Feedback</Accordion.Header>
                       <Accordion.Body>
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <input

@@ -12,6 +12,9 @@ import MakeAdmin from './pages/AdminPanel/MakeAdmin/MakeAdmin';
 import AddEvent from './pages/AdminPanel/AddEvent/AddEvent';
 import Contact from './pages/Contact/Contact';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import Profile from './pages/Profile/Profile';
+import ParticipentList from './pages/AdminPanel/ParticipantList/ParticipentList';
+import List from './pages/AdminPanel/List/List';
 import AddCauses from './pages/AdminPanel/AddCauses/AddCauses';
 import CausesHome from './pages/Causes/CausesHome/CausesHome';
 import AdminHome from './pages/AdminPanel/AdminHome/AdminHome'
@@ -19,7 +22,8 @@ import DonationHome from './pages/Donation/DonationHome/DonationHome';
 import { useEffect, useState } from 'react';
 import Loaders from './pages/Shared/Loaders/Loaders';
 import Credits from './pages/AdminPanel/Credits/Credits';
-
+import NotFound from './pages/NotFound/NotFound';
+import AdminRoute from './pages/Login/AdminRoute/AdminRoute';
 
 function App() {
   const [isPreLoader, setIsPreLoader] = useState(true);
@@ -44,21 +48,30 @@ function App() {
 
               <Route path="getStarted" element={<EventsHome />} />
               <Route path="causes" element={<CausesHome />} />
-              <Route path="eventDetail/:id" element={<EventDetail />} />
+              <Route path="eventDetail/:id" element={
+                <PrivateRoute> <EventDetail /></PrivateRoute>
+              } />
 
-              <Route path="adminPanel" element={<AdminHome />} >
+              <Route path="adminPanel" element={
+                <AdminRoute><AdminHome /></AdminRoute>
+              } >
                 <Route path="makeAdmin" element={<MakeAdmin />} />
                 <Route path="projectMembers" element={<Credits />} />
                 <Route path="addEvent" element={<AddEvent />} />
                 <Route path="addCauses" element={<AddCauses />} />
+                <Route path="participant" element={<ParticipentList />} >
+                  <Route path="list/:title" element={<List />} />
+                </Route>
               </Route>
-
               <Route path="/contact" element={<Contact></Contact>} />
-              <Route path="donation" element={<DonationHome />} />
-              <Route path="about" element={
-                <PrivateRoute><ServiceHome /></PrivateRoute>
+              <Route path="donation" element={
+                <PrivateRoute><DonationHome /></PrivateRoute>
               } />
-              <Route path="*" element={<h1>Not found</h1>} />
+              <Route path="about" element={<ServiceHome />} />
+              <Route path="profile" element={
+                <PrivateRoute><Profile /></PrivateRoute>
+              } />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </AuthProvider>
