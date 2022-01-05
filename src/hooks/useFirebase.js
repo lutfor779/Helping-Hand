@@ -111,7 +111,7 @@ const useFirebase = () => {
         setIsLoading(true);
         const user = { email, displayName };
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://serene-bastion-42312.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -124,11 +124,10 @@ const useFirebase = () => {
     // check admin
     useEffect(() => {
 
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://serene-bastion-42312.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data);
-
             });
     }, [user.email]);
 
