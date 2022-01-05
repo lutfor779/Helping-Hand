@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 const List = () => {
     const [users, setUsers] = useState([]);
     const { title } = useParams();
+    console.log(title)
 
     useEffect(() => {
         fetch(`http://localhost:5000/list`)
