@@ -3,7 +3,6 @@ import useAuth from '../../hooks/useAuth';
 import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
 
-
 const Profile = () => {
     const [profile, setProfile] = useState({});
     const { user } = useAuth()
@@ -14,22 +13,27 @@ const Profile = () => {
                 setProfile(data)
             });
     }, [user?.email]);
-    console.log(profile)
+
     return (
-        <div className='row'>
+        <div>
             <Header />
-            <div className='bg-light border custom-shadow'>
-            <div className="col-md-6">
-                <h3>Name: {profile?.displayName}</h3>
-                <p>Role: {profile?.role}</p>
-                <p>Email: {profile?.email}</p>
-            </div>
-            <div className="col-md-6">
-                <h3>You participate in these events</h3>
-                {profile?.events?.map(event => <ul>
-                    <li>{event}</li>
-                </ul>)}
-            </div>
+
+            <div className='container text-center bg-light p-5 my-5'>
+                <h2 className='text-color mb-3'>My Profile</h2>
+                <div style={{ fontFamily: "poppins" }}>
+                    <h4>{profile?.displayName}</h4>
+                    <p className='m-0'>Role: {profile?.role}</p>
+                    <p className='m-0'>Email: {profile?.email}</p>
+                    {
+                        !profile.events ? <h4 className='my-5 text-danger'>Ooops! You have currently not participant in any events</h4>
+                            : <div>
+                                <h4 className='my-5'>My Participant List in these events</h4>
+                                {profile?.events?.map(event => <ul>
+                                    <li style={{ listStyleType: "none" }}>{event}</li>
+                                </ul>)}
+                            </div>
+                    }
+                </div>
             </div>
 
             <Footer />

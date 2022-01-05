@@ -11,7 +11,7 @@ const User = ({ user, mail }) => {
             return;
         }
         const userData = { email, role };
-        fetch(`http://localhost:5000/users/admin`, {
+        fetch(`https://serene-bastion-42312.herokuapp.com/users/admin`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

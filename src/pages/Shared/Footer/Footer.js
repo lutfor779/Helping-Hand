@@ -1,15 +1,16 @@
 import React from 'react';
 import { IoLocationSharp } from "react-icons/io5";
-import { BsFillTelephoneFill} from "react-icons/bs";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import logo from '../../../images/logo1.png';
 import './Footer.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-footer">
-            <div className="container mt-5 pt-5 pb-3 text-light">
+            <div className="container pt-5 pb-3 text-light">
                 <div>
                     <div className="row">
                         <div className="col-12 col-md-12 col-lg-4 mb-lg-0 mb-4 text-start">
@@ -42,12 +43,12 @@ const Footer = () => {
                                 <li className="text-start mb-1 pb-2"><h4>Newsletter</h4></li>
                                 <li className="text-start mt-1 mb-2">You will be notified when something new will be appear.</li>
                                 <li className="text-start mt-1">
-                                    <button to="/donation" className='btn btn-danger rounded-pill px-3 button-color my-4'>DONATE NOW</button>
+                                    <button onClick={() => navigate('/donation')} className='btn btn-danger rounded-pill px-3 button-color my-4'>DONATE NOW</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <p className="mt-5 mb-0 text-center">Copyright ©helping-hand-2021 ||</p>
+                    <p className="mt-5 mb-0 text-center">Copyright ©helping-hand-2021</p>
                 </div>
             </div>
         </div>

@@ -23,6 +23,7 @@ import { useEffect, useState } from 'react';
 import Loaders from './pages/Shared/Loaders/Loaders';
 import Credits from './pages/AdminPanel/Credits/Credits';
 import NotFound from './pages/NotFound/NotFound';
+import AdminRoute from './pages/Login/AdminRoute/AdminRoute';
 
 function App() {
   const [isPreLoader, setIsPreLoader] = useState(true);
@@ -52,7 +53,7 @@ function App() {
               } />
 
               <Route path="adminPanel" element={
-                <AdminHome />
+                <AdminRoute><AdminHome /></AdminRoute>
               } >
                 <Route path="makeAdmin" element={<MakeAdmin />} />
                 <Route path="projectMembers" element={<Credits />} />
@@ -67,7 +68,9 @@ function App() {
                 <PrivateRoute><DonationHome /></PrivateRoute>
               } />
               <Route path="about" element={<ServiceHome />} />
-              <Route path="profile" element={<Profile />} />
+              <Route path="profile" element={
+                <PrivateRoute><Profile /></PrivateRoute>
+              } />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

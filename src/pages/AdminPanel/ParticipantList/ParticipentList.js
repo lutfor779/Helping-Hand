@@ -13,23 +13,21 @@ const ParticipentList = () => {
     const allEvents = useSelector((state) => state.events.services)
     return (
         <Container>
-            <Row className='g-0'>
+            <Row className='g-0 p-3 bg-light'>
                 <Col md={7}>
 
 
-                    {allEvents?.map(event => <div >
-                        <h3>{event?.title}</h3>
-                        <Link to={`list/${event?.title}`}>  see registered list</Link>
-
+                    {allEvents?.map(event => <div key={event._id} className='border m-1 p-3' >
+                        <h3 className='text-success fw-bold'>{event?.title}</h3>
+                        <Link to={`list/${event?.title}`}
+                            style={{ textDecoration: "none" }}>See registered list</Link>
 
                     </div>
                     )}
                 </Col>
-                <Col md={5}>
+                <Col md={5} className='border p-5'>
                     <Outlet />
                 </Col >
-
-
             </Row>
         </Container>
     );

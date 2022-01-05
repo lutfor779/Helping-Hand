@@ -52,11 +52,6 @@ const Navigation = () => {
                             </LinkContainer>
                         }
 
-                        {
-                            user.displayName && !admin && <Navbar.Text>
-                                {user.displayName} &nbsp;
-                            </Navbar.Text>
-                        }
                         {user?.email && <LinkContainer to="/profile">
                             <Nav.Link>My profile</Nav.Link>
                         </LinkContainer>}
@@ -67,7 +62,9 @@ const Navigation = () => {
                                     onClick={logOut}>Logout</Button>
                                 :
                                 <LinkContainer to="/login">
-                                    <Nav.Link><p className='button-color border-0'>Login</p></Nav.Link>
+                                    <Nav.Link>
+                                        <Button variant='outline-warning text-white'>Login</Button>
+                                    </Nav.Link>
                                 </LinkContainer>
                         }
                     </Nav>

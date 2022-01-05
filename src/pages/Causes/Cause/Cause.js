@@ -12,7 +12,7 @@ const Cause = () => {
   const [causes, setCauses] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/causes")
+      .get("https://serene-bastion-42312.herokuapp.com/causes")
       .then((res) => setCauses(res.data));
   }, []);
   return (
@@ -21,7 +21,7 @@ const Cause = () => {
         <Row className="g-3">
           <Col md={8}>
             {causes?.map((cause) => (
-              <Row key={cause._id} className="g-3">
+              <Row key={cause._id} className="g-3 p-3">
                 <Col md={6} lg={4}>
                   <img className="img-fluid" src={cause.image} alt="" />
                 </Col>
@@ -43,13 +43,13 @@ const Cause = () => {
             ))}
           </Col>
 
-          <Col md={4} className="">
-            <BarChart width={300} height={300} data={data}>
-              <XAxis dataKey="name" stroke="#eed8d2" />
+          <Col md={4} className="p-5">
+            <BarChart width={300} height={300} data={data} className="bg-light">
+              <XAxis dataKey="name" stroke="#2f4158" />
               <YAxis />
               <Tooltip />
-              <CartesianGrid stroke="#eed8d2" strokeDasharray="10 5" />
-              <Bar dataKey="uv" fill="#eed8d2" barSize={30} />
+              <CartesianGrid stroke="#2f4158" strokeDasharray="10 5" />
+              <Bar dataKey="uv" fill="#f97762" barSize={30} />
             </BarChart>
           </Col>
         </Row>

@@ -40,16 +40,13 @@ const AdminNav = () => {
                                 <Nav.Link>Make Admin</Nav.Link>
                             </LinkContainer>
 
-                            <LinkContainer to="addEvent" >
-                                <Nav.Link>Add Events</Nav.Link>
-                            </LinkContainer>
                             <LinkContainer to="participant" >
                                 <Nav.Link>Participant list</Nav.Link>
                             </LinkContainer>
 
-
-
-
+                            <LinkContainer to="addEvent" >
+                                <Nav.Link>Add Events</Nav.Link>
+                            </LinkContainer>
 
                             <LinkContainer to="addCauses" >
                                 <Nav.Link>Add Causes</Nav.Link>

@@ -104,7 +104,7 @@ const EventDetail = () => {
                 <div className="feedback area mt-3">
                   <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
-                      <Accordion.Header className="theme-color">Give a Feedback</Accordion.Header>
+                      <Accordion.Header className="text-color">Give a Feedback</Accordion.Header>
                       <Accordion.Body>
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <input
