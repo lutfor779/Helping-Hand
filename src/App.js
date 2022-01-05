@@ -62,8 +62,6 @@ function App() {
                   <Route path="list/:title" element={<List />} />
                 </Route>
               </Route>
-
-
               <Route path="/contact" element={<Contact></Contact>} />
               <Route path="donation" element={
                 <PrivateRoute><DonationHome /></PrivateRoute>

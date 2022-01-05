@@ -19,7 +19,6 @@ const MakeAdmin = () => {
         <div>
             <Container>
                 <h3 className='mt-5 mb-3 text-center'>Our Admin Panel</h3>
-
                 <Stack gap={3} className='w-75 mx-auto'>
                     {
                         users.length > 0

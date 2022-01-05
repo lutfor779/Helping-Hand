@@ -18,6 +18,7 @@ const Profile = () => {
     return (
         <div className='row'>
             <Header />
+            <div className='bg-light border custom-shadow'>
             <div className="col-md-6">
                 <h3>Name: {profile?.displayName}</h3>
                 <p>Role: {profile?.role}</p>
@@ -28,6 +29,7 @@ const Profile = () => {
                 {profile?.events?.map(event => <ul>
                     <li>{event}</li>
                 </ul>)}
+            </div>
             </div>
 
             <Footer />

@@ -51,15 +51,15 @@ const AddEvent = () => {
                             onBlur={handleOnBlur} />
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Details of the event"
-                            name="description"
-                            required
-                            onBlur={handleOnBlur} />
-                    </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Image Link</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Enter the link of the event lorem simsdflk sdflsdf "
+                        name='image'
+                        required
+                        onBlur={handleOnBlur} />
+                </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Image Link</Form.Label>
@@ -71,15 +71,15 @@ const AddEvent = () => {
                             onBlur={handleOnBlur} />
                     </Form.Group>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label>Start Date</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="dd-mm-yy"
-                            name="date"
-                            required
-                            onBlur={handleOnBlur} />
-                    </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Event Location</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Address"
+                        name="place"
+                        required
+                        onBlur={handleOnBlur} />
+                </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Event Location</Form.Label>
