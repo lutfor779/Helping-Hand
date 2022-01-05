@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { BsEye } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { fetchEvents } from '../../../redux/slices/eventsSlice';
 
 
@@ -11,13 +12,21 @@ const ParticipentList = () => {
     }, [dispatch]);
     const allEvents = useSelector((state) => state.events.services)
     return (
-        <div className='row m-0'>
-            {allEvents?.map(event => <div className="col-md-4">
-                <h3>{event?.title}</h3>
-                <Link to={`list/${event?.title}`}>  see registered list</Link>
-
+        <div className='container bg-light p-5 my-5'>
+            <div className='row'>
+                <h2 className='text-color text-center mb-3'>All Participant List</h2>
+                <div className="col-md-7">
+                    {allEvents?.map(event => <div >
+                        <h5>{event?.title}</h5>
+                        <Link to={`list/${event?.title}`} style={{textDecoration: "none",}} > <BsEye /> See Registered List</Link>
+                    </div>
+                    )}
+                </div>
+                <div className="col-md-5">
+                    <Outlet />
+                </div>
             </div>
-            )}
+
 
         </div>
     );

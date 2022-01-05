@@ -55,7 +55,7 @@ const AddEvent = () => {
                     <Form.Label>Image Link</Form.Label>
                     <Form.Control
                         type="text"
-                        placeholder="Enter the link of the event lorem simsdflk sdflsdf "
+                        placeholder="Enter the link of the event"
                         name='image'
                         required
                         onBlur={handleOnBlur} />
@@ -65,7 +65,7 @@ const AddEvent = () => {
                         <Form.Label>Image Link</Form.Label>
                         <Form.Control
                             type="text"
-                            placeholder="Enter the link of the event lorem simsdflk sdflsdf "
+                            placeholder="Enter the link of the event"
                             name='image'
                             required
                             onBlur={handleOnBlur} />

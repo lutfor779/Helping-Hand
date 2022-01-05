@@ -17,7 +17,7 @@ const ChooseUs = () => {
           </Col>
           <Col md={6}>
             <div className="single-choose mb-3">
-                <h6 className="text-uppercase theme-color"> <BsPlusSquare /> who we are</h6>
+                <h6 className="text-uppercase text-color"> <BsPlusSquare /> who we are</h6>
                 <h3>Why Choose Us</h3>
                 <p>You choose us for our avilability and fund donation service. Our every volunteers works for ours. They done 100 + projects succcessfully.Donate to families with vulnerable children raised by single mothers. Empower vulnerable families for sustainability. View Portfolio. Experienced Team.</p>
                 <div className="ceo-area theme-bg text-white rounded p-4">

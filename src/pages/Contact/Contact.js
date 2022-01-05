@@ -72,7 +72,7 @@ const Contact = () => {
                     </div>
                     {/* contact icon end */}
                     <div className=" text-center text-uppercase py-3 mb-3">
-                        <h2>Get <span className="theme-color">in touch</span></h2>
+                        <h2>Get <span className="text-color">in touch</span></h2>
                     </div>
                     <div className="row">
                         <div className="col-lg-12">

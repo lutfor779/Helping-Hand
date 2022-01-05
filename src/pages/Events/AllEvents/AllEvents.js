@@ -14,8 +14,8 @@ const AllEvents = () => {
 
     return (
         <Container>
-            <h1 className='text-center text-warning bg-light p-3 rounded'>Upcoming Events</h1>
-            <Row xs={1} md={2} lg={4} className="g-4 pt-5 bg-light p-3">
+            <h1 className='text-center text-color mt-5 p-3 rounded'>Upcoming Events</h1>
+            <Row xs={1} md={2} lg={4} className="g-4 p-3">
                 {
                     allEvents.length !== 0 && allEvents.map(event => <Event key={event._id} event={event} />)
                 }

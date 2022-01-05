@@ -94,16 +94,14 @@ const EventDetail = () => {
                 <img src={event.image} className="img-fluid" alt="" />
                 <h6 className="mt-3"> Event Date: {event.date}</h6>
 
-                {isJoin?.length !== 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
-                {isJoin?.length === 0 && <h3 >You Already joined</h3>}
-
-
+                {isJoin?.length === 0 && <Button variant="success " onClick={handleJoining}>Join in this event as volunteer</Button>}
+                {isJoin?.length !== 0 && <h3 >You Already joined</h3>}
 
 
                 <div className="feedback area mt-3">
                   <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
-                      <Accordion.Header className="theme-color">Give a Feedback</Accordion.Header>
+                      <Accordion.Header className="text-color">Give a Feedback</Accordion.Header>
                       <Accordion.Body>
                         <form onSubmit={handleSubmit(onSubmit)}>
                           <input

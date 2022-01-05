@@ -35,7 +35,7 @@ const Feedback = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-12 mb-5 h-100">
+          <div className="col-12 col-md-12 mb-5 h-100">
             <Slider {...settings}>
               {feedback?.map((pd) => (
                 <div key={pd._id} className="text-area bg-light mx-5 py-5 custom-shadow" height="100px">
@@ -43,7 +43,7 @@ const Feedback = () => {
                   <p className="px-4">{pd.feedback.slice(0, 170)}</p>
                   <p>
                     <Rating
-                      className="theme-color"
+                      className="text-color"
                       initialRating={pd.rating}
                       emptySymbol={<FaRegStar />}
                       fullSymbol={<FaStar />}

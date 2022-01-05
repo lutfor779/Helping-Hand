@@ -24,7 +24,7 @@ const AboutUs = () => {
             </div>
             <div className="col-md-6">
               <div className="aboutus-right ">
-                <h6 className="theme-color">
+                <h6 className="text-color">
                   {" "}
                   <BsPlusSquareFill /> ABOUT OUR SERVICES
                 </h6>
@@ -52,19 +52,19 @@ const AboutUs = () => {
                   <div className="">
                     <ul className="list-group border-0">
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Food Donation
+                        <BsCoin className="text-color me-3" /> Food Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Money Donation
+                        <BsCoin className="text-color me-3" /> Money Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Dress Donation
+                        <BsCoin className="text-color me-3" /> Dress Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Water Donation
+                        <BsCoin className="text-color me-3" /> Water Donation
                       </li>
                       <li className="list-group-item border-0">
-                        <BsCoin className="theme-color me-3" /> Dress Donation
+                        <BsCoin className="text-color me-3" /> Dress Donation
                       </li>
                     </ul>
                   </div>
