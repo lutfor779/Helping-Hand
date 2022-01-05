@@ -3,7 +3,8 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Event = ({ event }) => {
-    const { _id, image, title, date } = event;
+    const { _id, image, title, date, place } = event;
+    console.log(event)
 
     return (
         <Col>
@@ -11,7 +12,8 @@ const Event = ({ event }) => {
                 <Card.Img variant="top" src={image} height="200" className="rounded-top" />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
-                    <Card.Text>Date: {date}</Card.Text>
+                    <Card.Text>Event Date: {date}</Card.Text>
+                    <Card.Text>Event Place: {place}</Card.Text>
                 </Card.Body>
 
                 <Card.Footer>
