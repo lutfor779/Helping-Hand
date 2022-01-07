@@ -67,7 +67,7 @@ const EventDetail = () => {
   }, [user?.email, event?.title, clicked]);
 
 
-  const onSubmit = (e, data) => {
+  const onSubmit = (data) => {
     console.log(data);
     data["rating"] = rating;
     const image = event.image;
