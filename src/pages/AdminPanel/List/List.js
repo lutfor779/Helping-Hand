@@ -7,7 +7,7 @@ const List = () => {
     console.log(title)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/list`)
+        fetch(`https://serene-bastion-42312.herokuapp.com/list`)
             .then(res => res.json())
             .then(data => {
                 let filter = []
