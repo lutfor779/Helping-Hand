@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import logo from '../../../images/logo1.png';
 import './Footer.css'
 import { NavLink, useNavigate } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -20,13 +21,14 @@ const Footer = () => {
                             <p className='my-3 w-75'>Welcome and open yourself to your truest love this year with us! With the Release Process</p>
                         </div>
                         <div className="col-12 col-lg-2 col-md-6">
+                            <h4 className="text-start pb-2">Quick Links</h4>
                             <ul className="list-style p-0">
-                                <li className="text-start pb-2"><h4>Quick Links</h4></li>
                                 <li className="text-start">About Us</li>
                                 <li className="text-start">Causes</li>
                                 <li className="text-start">Events</li>
                                 <li className="text-start">Volunteer</li>
                                 <li className="text-start">Contact</li>
+                                <LinkContainer to="/about/projectMembers"><li className="text-start"> Project Contributors</li></LinkContainer>
                             </ul>
                         </div>
                         <div className="col-12 col-md-6 col-lg-3">

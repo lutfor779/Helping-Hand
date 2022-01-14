@@ -1,0 +1,15 @@
+.lab, .las{
+    font-size: 2.2em;
+    color: white;
+;    
+}
+.lab:hover, .las:hover{
+    color: #65c9bb;    
+    transform: scale(1.2);
+}
+.we{
+    background-color: #0c0c2c;        
+}
+.title{
+    color: #65c9bb;    
+}

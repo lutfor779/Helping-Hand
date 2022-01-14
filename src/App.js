@@ -24,6 +24,7 @@ import Loaders from './pages/Shared/Loaders/Loaders';
 import Credits from './pages/AdminPanel/Credits/Credits';
 import NotFound from './pages/NotFound/NotFound';
 import AdminRoute from './pages/Login/AdminRoute/AdminRoute';
+import ProjectMembers from './pages/Shared/ProjectMembers/ProjectMembers';
 
 function App() {
   const [isPreLoader, setIsPreLoader] = useState(true);
@@ -71,6 +72,7 @@ function App() {
               <Route path="profile" element={
                 <PrivateRoute><Profile /></PrivateRoute>
               } />
+              <Route path="about/projectMembers" element={<ProjectMembers />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
